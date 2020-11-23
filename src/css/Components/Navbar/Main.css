@@ -1,0 +1,21 @@
+.navbar {
+  width: 75px;
+  background-color: #333333;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2.5rem; }
+  .navbar a {
+    color: #858585;
+    text-decoration: none;
+    display: grid;
+    width: 100%;
+    padding: 15px 0;
+    place-items: center; }
+    .navbar a:hover {
+      color: white; }
+  .navbar a.current {
+    border-left: solid 2px white;
+    color: white; }

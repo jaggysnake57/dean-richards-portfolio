@@ -1,0 +1,26 @@
+@import '../../vars';
+.navbar {
+	width: 75px;
+	background-color: $navbarBackground;
+	height: 100vh;
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: 2.5rem;
+	a {
+		color: $defaultIcon;
+		text-decoration: none;
+		display: grid;
+		width: 100%;
+		padding: 15px 0;
+		place-items: center;
+		&:hover {
+			color: white;
+		}
+	}
+	a.current {
+		border-left: solid 2px white;
+		color: white;
+	}
+}
