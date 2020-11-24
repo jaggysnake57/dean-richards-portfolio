@@ -10,48 +10,48 @@
 		object-fit: contain;
 		height: 2.3rem;
 	}
-	.tag-fragment {
-		color: $tagBrackets;
-	}
-	.component {
-		color: $componentName;
-	}
-	.attribute {
-		color: $componentAttr;
-	}
-	.bracket-1 {
-		color: $bracketsColor1;
-	}
-	.bracket-2 {
-		color: $bracketsColor2;
-	}
-	.bracket-3 {
-		color: $bracketsColor3;
-	}
-	.tab {
-		padding-left: 108px;
-		border-left: 1px solid darkgrey;
-	}
+}
+.tag-fragment {
+	color: $tagBrackets;
+}
+.component {
+	color: $componentName;
+}
+.attribute {
+	color: $componentAttr;
+}
+.bracket-1 {
+	color: $bracketsColor1;
+}
+.bracket-2 {
+	color: $bracketsColor2;
+}
+.bracket-3 {
+	color: $bracketsColor3;
+}
+.tab {
+	padding-left: 108px;
+	border-left: 1px solid darkgrey;
+}
 
-	.object {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		width: 500px;
-		align-items: center;
-		img {
-			justify-self: center;
-		}
+.object {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	width: 500px;
+	align-items: center;
+	img {
+		justify-self: center;
 	}
-	.bool {
-		color: $jsxTag;
-	}
-	.function {
-		color: $function;
-	}
-	.cursor {
-		animation: cursorFlash 0.5s linear infinite alternate;
-		color: white;
-	}
+}
+.bool {
+	color: $jsxTag;
+}
+.function {
+	color: $function;
+}
+.cursor {
+	animation: cursorFlash 0.5s linear infinite alternate;
+	color: white;
 }
 
 @keyframes cursorFlash {
