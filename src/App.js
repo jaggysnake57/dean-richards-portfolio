@@ -1,19 +1,25 @@
-import './css/App.css';
+import { useState } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+//components
 import Navbar from './Components/Navbar';
-
+import Footer from './Components/Footer';
+//pages
 import Home from './Pages/Home';
 import About from './Pages/About';
 import Projects from './Pages/Projects';
 import Contact from './Pages/Contact';
-import { useState } from 'react';
+//css
+import './css/App.css';
+import TabBar from './Components/TabBar';
 
 function App() {
 	const [currentPage, setCurrentPage] = useState('home');
+
 	return (
 		<Router>
 			<div className="App">
 				<Navbar currentPage={currentPage} />
+				<TabBar currentPage={currentPage} />
 				{/* navbar side */}
 				<div className="content">
 					<Switch>
@@ -63,6 +69,7 @@ function App() {
 						/>
 					</Switch>
 				</div>
+				<Footer />
 			</div>
 		</Router>
 	);

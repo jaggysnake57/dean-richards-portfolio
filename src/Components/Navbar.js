@@ -2,10 +2,10 @@
 import React from 'react';
 //icons
 import { Link } from 'react-router-dom';
-import { RiHomeLine } from 'react-icons/ri';
+
 import { BsCollection } from 'react-icons/bs';
-import { RiUser3Line } from 'react-icons/ri';
-import { RiMailSendLine } from 'react-icons/ri';
+import { RiUser3Line, RiHomeLine, RiMailSendLine } from 'react-icons/ri';
+
 //css
 import '../css/Components/Navbar/Main.css';
 import '../css/Components/Navbar/Responsive.css';
