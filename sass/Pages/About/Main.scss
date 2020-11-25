@@ -1,23 +1,21 @@
 .about {
 	height: 100vh;
-	padding-top: 60px;
-	padding-left: 30px;
+	padding-top: 100px;
+	padding-left: 100px;
 	font-family: 'Inconsolata', monospace;
 	color: white;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	place-items: center;
+	// place-items:  ;
 	font-size: 1.5rem;
 	.tab {
 		padding-left: 5%;
 	}
 	.myImage {
-		place-self: center;
 		img {
-			width: 700px;
+			width: 50%;
 			object-fit: contain;
-			max-height: 700px;
-			border-radius: 500px;
+			margin-left: 20%;
 		}
 	}
 }
