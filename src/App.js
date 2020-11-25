@@ -14,6 +14,24 @@ import TabBar from './Components/TabBar';
 
 function App() {
 	const [currentPage, setCurrentPage] = useState('home');
+	const openTag = (tagName) => {
+		return (
+			<>
+				<span className="tag-fragment">{'<'}</span>
+				<span className="bool">{tagName}</span>
+				<span className="tag-fragment">{'>'}</span>
+			</>
+		);
+	};
+	const closeTag = (tagName) => {
+		return (
+			<>
+				<span className="tag-fragment">{'<'}</span>
+				<span className="bool">{tagName}</span>
+				<span className="tag-fragment">{'/>'}</span>
+			</>
+		);
+	};
 
 	return (
 		<Router>
@@ -64,6 +82,8 @@ function App() {
 								<Contact
 									{...props}
 									setCurrentPage={setCurrentPage}
+									openTag={openTag}
+									closeTag={closeTag}
 								/>
 							)}
 						/>

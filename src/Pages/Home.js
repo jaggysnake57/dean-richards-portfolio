@@ -14,7 +14,7 @@ const Home = ({ setCurrentPage }) => {
 	useEffect(() => {
 		setCurrentPage('home');
 	}, []);
-
+	// TODO - refactor with tag function
 	return (
 		<div className="home">
 			<p className="tag-fragment">{'<>'}</p>
