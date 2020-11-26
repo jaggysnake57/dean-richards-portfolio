@@ -15,6 +15,9 @@ const Home = ({ setCurrentPage }) => {
 		setCurrentPage('home');
 	}, []);
 	// TODO - refactor with tag function
+
+	//! FIXME - page layout wrong -
+	//!	deanrichards tag too far over
 	return (
 		<div className="home">
 			<p className="tag-fragment">{'<>'}</p>

@@ -14,6 +14,8 @@ import TabBar from './Components/TabBar';
 
 function App() {
 	const [currentPage, setCurrentPage] = useState('home');
+	const [projectName, setProjectName] = useState('');
+
 	const openTag = (tagName) => {
 		return (
 			<>
@@ -37,7 +39,11 @@ function App() {
 		<Router>
 			<div className="App">
 				<Navbar currentPage={currentPage} />
-				<TabBar currentPage={currentPage} />
+				<TabBar
+					currentPage={currentPage}
+					projectName={projectName}
+					setProjectName={setProjectName}
+				/>
 				{/* navbar side */}
 				<div className="content">
 					<Switch>
@@ -71,6 +77,7 @@ function App() {
 								<Projects
 									{...props}
 									setCurrentPage={setCurrentPage}
+									setProjectName={setProjectName}
 								/>
 							)}
 						/>

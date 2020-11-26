@@ -3,24 +3,34 @@
   position: fixed;
   height: 45px;
   background-color: #252526;
-  width: 100%; }
+  width: 100%;
+  display: flex; }
 
 .pageTab {
   display: flex;
   align-items: center;
   height: 45px;
   width: fit-content;
+  border: none;
+  border-right: 2px solid #252526;
   padding-left: 10px;
-  padding-right: 30px;
   background-color: #2d2d2d;
   color: #858585;
   font-size: 1rem;
-  text-transform: capitalize; }
+  text-transform: capitalize;
+  cursor: pointer; }
   .pageTab svg {
     margin-right: 5px;
     font-size: 1.2rem; }
   .pageTab h3 {
-    font-weight: 200; }
+    font-weight: 200;
+    margin-right: 10px; }
+  .pageTab button {
+    border: none;
+    background: none;
+    color: #858585;
+    font-size: 1.5rem;
+    cursor: pointer; }
 
 .active {
   background-color: #1e1e1e;

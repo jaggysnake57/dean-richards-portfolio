@@ -5,25 +5,37 @@
 	height: 45px;
 	background-color: $tabBar;
 	width: 100%;
+	display: flex;
 }
 .pageTab {
 	display: flex;
 	align-items: center;
 	height: 45px;
 	width: fit-content;
+	border: none;
+	border-right: 2px solid $tabBar;
 	padding-left: 10px;
-	padding-right: 30px;
 	background-color: $inactiveTab;
 	color: $defaultIcon;
 	font-size: 1rem;
-
 	text-transform: capitalize;
+	cursor: pointer;
+
 	svg {
 		margin-right: 5px;
 		font-size: 1.2rem;
 	}
 	h3 {
 		font-weight: 200;
+		margin-right: 10px;
+	}
+	button {
+		border: none;
+		background: none;
+		// color: white;
+		color: $defaultIcon;
+		font-size: 1.5rem;
+		cursor: pointer;
 	}
 }
 .active {
