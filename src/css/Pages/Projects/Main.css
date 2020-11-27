@@ -6,6 +6,12 @@
   position: fixed;
   top: 0; }
 
+.projects .projectTitles {
+  display: none; }
+
+.projects .folderOpen {
+  display: block; }
+
 .projects .mainContent {
   margin-left: 275px;
   padding-top: 100px; }

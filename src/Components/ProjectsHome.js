@@ -9,7 +9,7 @@ const ProjectsHome = ({ setProjectName }) => {
 			<h1 className="component">
 				<span className="tag-fragment">{'<'}</span>
 				Featured Projects
-				<span className="tag-fragment">{'/>'}</span>
+				<span className="tag-fragment">{'>'}</span>
 			</h1>
 
 			<div className="projectsGrid">

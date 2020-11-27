@@ -1,5 +1,5 @@
-export const projects = {
-	socialApe: {
+export const projects = [
+	{
 		name: 'Social Ape',
 		imageName: 'thumb-gray.png',
 		blurb:
@@ -8,7 +8,7 @@ export const projects = {
 		featured: true,
 		category: ['mern', 'react', 'redux', 'firebase'],
 	},
-	iMessageClone: {
+	{
 		name: 'iMessage Clone',
 		imageName: 'imessage.jpg',
 		blurb:
@@ -18,7 +18,7 @@ export const projects = {
 		category: ['mern', 'react', 'redux', 'firebase'],
 	},
 
-	deanRichards: {
+	{
 		name: 'Dean Richards',
 		imageName: 'deanrichards.png',
 		blurb: 'Your looking at it!',
@@ -26,7 +26,7 @@ export const projects = {
 		featured: true,
 		category: ['mern', 'react', 'redux', 'firebase'],
 	},
-	instagramClone: {
+	{
 		name: 'Instagram Clone',
 		imageName: 'deanrichards.png',
 		blurb:
@@ -35,4 +35,4 @@ export const projects = {
 		featured: true,
 		category: ['mern', 'react', 'redux', 'firebase'],
 	},
-};
+];

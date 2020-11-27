@@ -8,6 +8,13 @@
 		position: fixed;
 		top: 0;
 	}
+	.projectTitles {
+		display: none;
+	}
+	.folderOpen {
+		display: block;
+	}
+
 	.mainContent {
 		margin-left: $navBarWidth + $projectsSideBarWidth;
 		padding-top: 100px;

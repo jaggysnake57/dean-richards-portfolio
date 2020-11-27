@@ -78,6 +78,7 @@ function App() {
 									{...props}
 									setCurrentPage={setCurrentPage}
 									setProjectName={setProjectName}
+									projectName={projectName}
 								/>
 							)}
 						/>

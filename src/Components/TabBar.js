@@ -51,7 +51,7 @@ const TabBar = ({ currentPage, projectName, setProjectName }) => {
 			}>
 			<div className="pageTab active">
 				<TabIcon />
-				<h3>{currentPage}</h3>
+				<h3 onClick={() => setProjectName('')}>{currentPage}</h3>
 			</div>
 			{projectNames?.map((name) => (
 				<button
