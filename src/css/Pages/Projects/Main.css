@@ -1,17 +1,49 @@
 .projects .sidebar {
   padding-top: 75px;
-  width: 200px;
+  padding-left: 5px;
+  width: 250px;
   height: 100vh;
   background-color: #252526;
   position: fixed;
   top: 0; }
+  .projects .sidebar h2 {
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: 1px solid darkgrey;
+    font-size: 1.1rem; }
+  .projects .sidebar h3 {
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 200;
+    margin-left: 20px;
+    position: relative; }
+    .projects .sidebar h3::before {
+      content: '>';
+      font-size: 1.2rem;
+      position: absolute;
+      left: -15px; }
+    .projects .sidebar h3.folderOpen::before {
+      transform: rotate(90deg); }
+    .projects .sidebar h3 svg {
+      margin-right: 10px;
+      position: relative;
+      top: 2px; }
 
 .projects .projectTitles {
-  display: none; }
+  display: none;
+  color: white;
+  border-left: solid 1px darkgrey;
+  padding-left: 20px;
+  margin-left: 10px;
+  cursor: pointer; }
+  .projects .projectTitles svg {
+    margin-right: 5px; }
 
 .projects .folderOpen {
   display: block; }
 
 .projects .mainContent {
-  margin-left: 275px;
+  margin-left: 325px;
   padding-top: 100px; }

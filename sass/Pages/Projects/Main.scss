@@ -2,14 +2,54 @@
 .projects {
 	.sidebar {
 		padding-top: 75px;
-		width: 200px;
+		padding-left: 5px;
+		width: $projectsSideBarWidth;
 		height: 100vh;
 		background-color: $tabBar;
 		position: fixed;
 		top: 0;
+
+		h2 {
+			color: white;
+			text-transform: uppercase;
+			text-align: center;
+			border-bottom: 1px solid darkgrey;
+			font-size: 1.1rem;
+		}
+		h3 {
+			color: white;
+			font-size: 1rem;
+			cursor: pointer;
+			font-weight: 200;
+			margin-left: 20px;
+			position: relative;
+
+			&::before {
+				content: '>';
+				font-size: 1.2rem;
+				position: absolute;
+				left: -15px;
+			}
+			&.folderOpen::before {
+				transform: rotate(90deg);
+			}
+			svg {
+				margin-right: 10px;
+				position: relative;
+				top: 2px;
+			}
+		}
 	}
 	.projectTitles {
 		display: none;
+		color: white;
+		border-left: solid 1px darkgrey;
+		padding-left: 20px;
+		margin-left: 10px;
+		cursor: pointer;
+		svg {
+			margin-right: 5px;
+		}
 	}
 	.folderOpen {
 		display: block;

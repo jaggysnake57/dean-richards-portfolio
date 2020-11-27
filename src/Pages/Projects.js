@@ -5,6 +5,7 @@ import ProjectsHome from '../Components/ProjectsHome';
 import '../css/Pages/Projects/Main.css';
 import '../css/Pages/Projects/Responsive.css';
 import { projects } from '../data/projects';
+import { RiFolderFill, RiFile3Fill } from 'react-icons/ri';
 
 const Projects = ({ setCurrentPage, setProjectName, projectName }) => {
 	const [catagories, setCatagories] = useState({});
@@ -26,6 +27,7 @@ const Projects = ({ setCurrentPage, setProjectName, projectName }) => {
 	}, []);
 
 	const openCategoryFolder = (e) => {
+		e.target.classList.toggle('folderOpen');
 		e.target.nextSibling.classList.toggle('folderOpen');
 	};
 
@@ -34,10 +36,10 @@ const Projects = ({ setCurrentPage, setProjectName, projectName }) => {
 			<div className="sidebar">
 				<h2>My-Projects</h2>
 				{Object.entries(catagories).map((category) => {
-					//loop through each catagory
 					let folder = (
 						<div className="folder">
 							<h3 onClick={(e) => openCategoryFolder(e)}>
+								<RiFolderFill />
 								{category[0]}
 							</h3>
 							<div className="projectTitles">
@@ -46,6 +48,7 @@ const Projects = ({ setCurrentPage, setProjectName, projectName }) => {
 										onClick={() =>
 											setProjectName(projectName)
 										}>
+										<RiFile3Fill />
 										{projectName}
 									</div>
 								))}
@@ -56,15 +59,11 @@ const Projects = ({ setCurrentPage, setProjectName, projectName }) => {
 				})}
 			</div>
 			<div className="mainContent">
-				{/* project component project as props */}
-
-				{/* projects home */}
-				{projectName === '' && (
+				{projectName === '' ? (
 					<ProjectsHome setProjectName={setProjectName} />
+				) : (
+					<IndividualProject projectName={projectName} />
 				)}
-
-				{/* individual project */}
-				<IndividualProject projectName={projectName} />
 			</div>
 		</div>
 	);
