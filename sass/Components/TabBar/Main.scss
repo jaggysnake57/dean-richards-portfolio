@@ -7,6 +7,9 @@
 	width: 100%;
 	display: flex;
 }
+.projectsOpen {
+	margin-left: $projectsSideBarWidth + $navBarWidth;
+}
 .pageTab {
 	display: flex;
 	align-items: center;

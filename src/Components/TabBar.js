@@ -45,7 +45,10 @@ const TabBar = ({ currentPage, projectName, setProjectName }) => {
 
 	const TabIcon = icons[currentPage];
 	return (
-		<div className="tabBar">
+		<div
+			className={
+				currentPage === 'projects' ? 'tabBar projectsOpen' : 'tabBar'
+			}>
 			<div className="pageTab active">
 				<TabIcon />
 				<h3>{currentPage}</h3>

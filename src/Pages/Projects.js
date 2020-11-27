@@ -1,16 +1,26 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import IndividualProject from '../Components/IndividualProject';
+import ProjectsHome from '../Components/ProjectsHome';
 //css
 import '../css/Pages/Projects/Main.css';
 import '../css/Pages/Projects/Responsive.css';
+import { projects } from '../data/projects';
 
 const Projects = ({ setCurrentPage, setProjectName }) => {
-	// state = project name -prop- from App.js
-
-	// state = projects -useState- populate from projects folder
+	const [catagories, setCatagories] = useState({
+		mern: [],
+		react: [],
+		redux: [],
+		firebase: [],
+	});
 
 	useEffect(() => {
 		document.body.classList.add('bodyBackground');
 		setCurrentPage('projects');
+		let cats = {};
+		Object.entries(projects).map((project) => {
+			project[1].category.map((tag) => {});
+		});
 	}, []);
 	return (
 		<div className="projects">
@@ -34,10 +44,15 @@ const Projects = ({ setCurrentPage, setProjectName }) => {
 					projectName 1
 				</button>
 			</div>
+			<div className="mainContent">
+				{/* project component project as props */}
 
-			{/* project component project as props */}
+				{/* projects home */}
+				<ProjectsHome setProjectName={setProjectName} />
 
-			<h2>Projects page</h2>
+				{/* individual project */}
+				<IndividualProject />
+			</div>
 		</div>
 	);
 };

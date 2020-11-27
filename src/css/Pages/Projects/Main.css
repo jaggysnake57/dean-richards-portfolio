@@ -1,5 +1,11 @@
 .projects .sidebar {
   padding-top: 75px;
   width: 200px;
-  height: 500px;
-  background-color: green; }
+  height: 100vh;
+  background-color: #252526;
+  position: fixed;
+  top: 0; }
+
+.projects .mainContent {
+  margin-left: 275px;
+  padding-top: 100px; }

@@ -1,8 +1,15 @@
+@import '../../vars';
 .projects {
 	.sidebar {
 		padding-top: 75px;
 		width: 200px;
-		height: 500px;
-		background-color: green;
+		height: 100vh;
+		background-color: $tabBar;
+		position: fixed;
+		top: 0;
+	}
+	.mainContent {
+		margin-left: $navBarWidth + $projectsSideBarWidth;
+		padding-top: 100px;
 	}
 }

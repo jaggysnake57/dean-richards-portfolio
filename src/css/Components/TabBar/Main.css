@@ -6,6 +6,9 @@
   width: 100%;
   display: flex; }
 
+.projectsOpen {
+  margin-left: 275px; }
+
 .pageTab {
   display: flex;
   align-items: center;
