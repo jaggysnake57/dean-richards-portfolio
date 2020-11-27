@@ -22,6 +22,9 @@
   font-size: 1rem;
   text-transform: capitalize;
   cursor: pointer; }
+  .pageTab .tabName {
+    display: flex;
+    align-items: center; }
   .pageTab svg {
     margin-right: 5px;
     font-size: 1.2rem; }

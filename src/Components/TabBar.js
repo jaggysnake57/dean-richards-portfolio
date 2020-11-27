@@ -25,21 +25,33 @@ const TabBar = ({ currentPage, projectName, setProjectName }) => {
 	useEffect(() => {
 		if (!projectNames.includes(projectName) && projectName !== '') {
 			setProjectNames([...projectNames, projectName]);
+			console.log('project name use effect fired');
 		}
 	}, [projectName]);
 
 	useEffect(() => {
-		if (!projectNames.includes(projectName) && projectNames.length) {
-			setProjectName(projectNames[0]);
+		if (currentPage === 'projects') {
+			if (!projectNames.includes(projectName) && projectNames.length) {
+				setProjectName(projectNames[0]);
+				console.log('project names use effect');
+			}
+		} else {
+			setProjectNames([]);
 		}
-	}, [projectNames]);
+		if (!projectNames.length) {
+			setProjectName('');
+		}
+	}, [projectNames, currentPage]);
 
 	const closeTab = (tabName) => {
 		const remainingTabs = projectNames.filter((name) => {
 			if (name !== tabName) {
 				return name;
+			} else {
+				return '';
 			}
 		});
+		console.log({ remainingTabs });
 		setProjectNames(remainingTabs);
 	};
 
@@ -54,19 +66,21 @@ const TabBar = ({ currentPage, projectName, setProjectName }) => {
 				<h3 onClick={() => setProjectName('')}>{currentPage}</h3>
 			</div>
 			{projectNames?.map((name) => (
-				<button
-					type="button"
+				<div
 					key={name}
-					onClick={() => setProjectName(name)}
 					className={
 						name === projectName ? 'pageTab active' : 'pageTab'
 					}>
-					<TabIcon />
-					<h3>{name}</h3>
-					<button onClick={() => closeTab(name)}>
+					<div
+						className="tabName"
+						onClick={() => setProjectName(name)}>
+						<TabIcon />
+						<h3>{name}</h3>
+					</div>
+					<div onClick={() => closeTab(name)}>
 						<RiCloseLine />
-					</button>
-				</button>
+					</div>
+				</div>
 			))}
 		</div>
 	);
