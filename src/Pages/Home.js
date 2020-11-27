@@ -22,7 +22,7 @@ const Home = ({ setCurrentPage }) => {
 		<div className="home">
 			<p className="tag-fragment">{'<>'}</p>
 			<div className="tab">
-				<p className="component tab">
+				<p className="component">
 					<span className="tag-fragment">{'<'}</span>DeanRichards
 				</p>
 				{/* tab */}
