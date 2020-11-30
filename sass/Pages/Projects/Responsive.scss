@@ -1,0 +1,12 @@
+@import '../../vars';
+
+@media screen and (max-width: 550px) {
+	.projects {
+		.sidebar {
+			display: none;
+		}
+		.mainContent {
+			margin-left: $navBarWidth;
+		}
+	}
+}

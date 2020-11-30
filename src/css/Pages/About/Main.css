@@ -9,6 +9,8 @@
   font-size: 1.5rem; }
   .about .tab {
     padding-left: 5%; }
+  .about h1 {
+    margin-bottom: 20px; }
   .about .myImage img {
     width: 50%;
     object-fit: contain;

@@ -1,0 +1,21 @@
+.notFound {
+	width: 90vw;
+	height: 99vh;
+	display: grid;
+	justify-content: center;
+	overflow: hidden;
+	text-align: center;
+	.centerBox {
+		h1 {
+			font-size: 20rem;
+			color: white;
+		}
+		h2 {
+			color: white;
+		}
+		a {
+			color: white;
+			font-size: 2rem;
+		}
+	}
+}

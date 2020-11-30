@@ -23,20 +23,22 @@ const TabBar = ({ currentPage, projectName, setProjectName }) => {
 	};
 
 	useEffect(() => {
-		if (!projectNames.includes(projectName) && projectName !== '') {
-			setProjectNames([...projectNames, projectName]);
-			console.log('project name use effect fired');
+		if (currentPage === 'projects') {
+			if (!projectNames.includes(projectName) && projectName !== '') {
+				setProjectNames([...projectNames, projectName]);
+			}
 		}
 	}, [projectName]);
 
 	useEffect(() => {
 		if (currentPage === 'projects') {
-			if (!projectNames.includes(projectName) && projectNames.length) {
+			if (projectNames.length && !projectNames.includes(projectName)) {
 				setProjectName(projectNames[0]);
-				console.log('project names use effect');
 			}
 		} else {
-			setProjectNames([]);
+			if (projectNames.length) {
+				setProjectNames([]);
+			}
 		}
 		if (!projectNames.length) {
 			setProjectName('');
@@ -51,7 +53,7 @@ const TabBar = ({ currentPage, projectName, setProjectName }) => {
 				return '';
 			}
 		});
-		console.log({ remainingTabs });
+
 		setProjectNames(remainingTabs);
 	};
 

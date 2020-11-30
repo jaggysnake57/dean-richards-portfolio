@@ -1,0 +1,8 @@
+@media screen and (max-width: 550px) {
+  .about {
+    grid-template-columns: 1fr;
+    font-size: 1rem;
+    padding-left: 70px; }
+    .about .myImage img {
+      width: 80%;
+      margin: 0 auto; } }

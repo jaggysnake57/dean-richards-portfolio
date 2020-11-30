@@ -1,0 +1,13 @@
+@media screen and (max-width: 550px) {
+  .home {
+    font-size: 1.2rem;
+    margin-left: 75px;
+    margin-top: 0;
+    padding-left: 0;
+    padding-top: 50px; }
+    .home img {
+      height: 1rem; }
+  .tab {
+    padding-left: 20px; }
+  .object {
+    width: 200px; } }

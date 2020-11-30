@@ -11,6 +11,7 @@ import Contact from './Pages/Contact';
 //css
 import './css/App.css';
 import TabBar from './Components/TabBar';
+import NotFound from './Pages/NotFound';
 
 function App() {
 	const [currentPage, setCurrentPage] = useState('home');
@@ -95,6 +96,7 @@ function App() {
 								/>
 							)}
 						/>
+						<Route component={NotFound} />
 					</Switch>
 				</div>
 				<Footer />
