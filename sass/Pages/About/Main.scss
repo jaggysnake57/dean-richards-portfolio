@@ -1,24 +1,2 @@
 .about {
-	height: 100vh;
-	padding-top: 100px;
-	padding-left: 100px;
-	font-family: 'Inconsolata', monospace;
-	color: white;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	// place-items:  ;
-	font-size: 1.5rem;
-	.tab {
-		padding-left: 5%;
-	}
-	h1 {
-		margin-bottom: 20px;
-	}
-	.myImage {
-		img {
-			width: 50%;
-			object-fit: contain;
-			margin-left: 20%;
-		}
-	}
 }
