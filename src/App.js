@@ -40,11 +40,7 @@ function App() {
 		<Router>
 			<div className="App">
 				<Navbar currentPage={currentPage} />
-				<TabBar
-					currentPage={currentPage}
-					projectName={projectName}
-					setProjectName={setProjectName}
-				/>
+
 				{/* navbar side */}
 				<div className="content">
 					<Switch>

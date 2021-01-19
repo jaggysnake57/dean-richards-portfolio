@@ -13,28 +13,52 @@ import '../css/Components/Navbar/Responsive.css';
 const Navbar = ({ currentPage }) => {
 	return (
 		<div className="navbar">
-			<Link
-				to="/"
-				className={currentPage === 'home' ? 'current' : 'undefined'}>
-				<RiHomeLine />
-			</Link>
-			<Link
-				to="/about"
-				className={currentPage === 'about' ? 'current' : 'undefined'}>
-				<RiUser3Line />
-			</Link>
-			<Link
-				to="/projects"
-				className={
-					currentPage === 'projects' ? 'current' : 'undefined'
-				}>
-				<BsCollection />
-			</Link>
-			<Link
-				to="/contact"
-				className={currentPage === 'contact' ? 'current' : 'undefined'}>
-				<RiMailSendLine />
-			</Link>
+			<div className="container">
+				<div className="brand">
+					<Link
+						to="/"
+						className={
+							currentPage === 'home' ? 'current' : 'undefined'
+						}>
+						Dean Richards
+					</Link>
+				</div>
+				<nav>
+					<Link
+						to="/"
+						className={
+							currentPage === 'home' ? 'current' : 'undefined'
+						}>
+						Home
+					</Link>
+					<Link
+						to="/about"
+						className={
+							currentPage === 'about' ? 'current' : 'undefined'
+						}>
+						About
+					</Link>
+					<Link
+						to="/projects"
+						className={
+							currentPage === 'projects' ? 'current' : 'undefined'
+						}>
+						Projects
+					</Link>
+					<Link
+						to="/contact"
+						className={
+							currentPage === 'contact' ? 'current' : 'undefined'
+						}>
+						Contact
+					</Link>
+					<div className="burger">
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+				</nav>
+			</div>
 		</div>
 	);
 };

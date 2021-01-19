@@ -1,9 +1,11 @@
 .content {
-	margin-left: 60px;
 	background-color: #1e1e1e;
+}
+.container {
+	width: 80%;
+	margin: 0 auto;
 }
 @media screen and (max-width: 550px) {
 	.content {
-		margin-left: 5px;
 	}
 }
