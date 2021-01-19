@@ -1,1 +1,17 @@
-
+.about {
+  min-height: 98vh;
+}
+.about .pageBackground {
+  right: 20%;
+}
+.about .container h1 {
+  color: white;
+  font-size: 2rem;
+  margin-top: 10rem;
+  margin-bottom: 7rem;
+}
+.about .container p {
+  font-size: 1.5rem;
+  color: white;
+  width: 50%;
+}

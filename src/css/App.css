@@ -1,8 +1,35 @@
 .content {
   background-color: #1e1e1e;
+  overflow-x: hidden;
+  z-index: -30;
+  position: relative;
 }
 
 .container {
   width: 80%;
   margin: 0 auto;
+}
+
+.pageBackground {
+  position: absolute;
+  top: -10%;
+}
+.pageBackground p {
+  font-size: 40rem;
+  opacity: 0.13;
+}
+
+.siteBackground {
+  position: absolute;
+  top: -20%;
+  left: 102%;
+  white-space: nowrap;
+  transform: rotate(90deg);
+  transform-origin: top left;
+  z-index: -20;
+}
+.siteBackground p {
+  font-size: 20rem;
+  color: #4ebc7c;
+  opacity: 0.13;
 }

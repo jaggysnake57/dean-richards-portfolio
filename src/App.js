@@ -40,6 +40,9 @@ function App() {
 		<Router>
 			<div className="App">
 				<Navbar currentPage={currentPage} />
+				<div className="siteBackground">
+					<p>Dean Richards</p>
+				</div>
 
 				{/* navbar side */}
 				<div className="content">
