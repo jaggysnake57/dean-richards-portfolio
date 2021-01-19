@@ -44,6 +44,16 @@
 				}
 			}
 		}
+		.current {
+			color: $defaultIcon;
+			cursor: default;
+			&:hover {
+				color: $defaultIcon;
+				&::after {
+					opacity: 0;
+				}
+			}
+		}
 		.burger {
 			display: none;
 			// display: flex;

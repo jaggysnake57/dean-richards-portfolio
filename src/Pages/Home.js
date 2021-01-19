@@ -20,55 +20,59 @@ const Home = ({ setCurrentPage }) => {
 	//!	deanrichards tag too far over
 	return (
 		<div className="home">
-			<p className="tag-fragment">{'<>'}</p>
-			<div className="tab">
-				<p className="component">
-					<span className="tag-fragment">{'<'}</span>DeanRichards
-				</p>
-				{/* tab */}
+			<div className="container">
+				<p className="tag-fragment">{'<>'}</p>
 				<div className="tab">
-					<p className="attribute ">
-						role=<span className="bracket-2">{'{'}</span>developer
-						<span className="bracket-2">{'}'}</span>
+					<p className="component">
+						<span className="tag-fragment">{'<'}</span>DeanRichards
 					</p>
-					<p className="attribute ">
-						tags=<span className="bracket-2">{'{'}</span>
-					</p>
-					<div className=" attribute tab object">
-						<p>Mongo: </p>
-						<img src={mongoIcon} alt="mongo icon"></img>
-						<p>Express:</p>
-						<img src={expressIcon} alt="" />
-						<p>Node:</p>
-						<img src={nodeIcon} alt="node icon" />
-						<p>React:</p>
-						<img src={reactIcon} alt="react icon" />
-						<p>Redux:</p>
-						<img src={reduxIcon} alt=" redux icon" />
+					{/* tab */}
+					<div className="tab">
+						<p className="attribute ">
+							role=<span className="bracket-2">{'{'}</span>
+							developer
+							<span className="bracket-2">{'}'}</span>
+						</p>
+						<p className="attribute ">
+							tags=<span className="bracket-2">{'{'}</span>
+						</p>
+						<div className=" attribute tab object">
+							<p>Mongo: </p>
+							<img src={mongoIcon} alt="mongo icon"></img>
+							<p>Express:</p>
+							<img src={expressIcon} alt="" />
+							<p>Node:</p>
+							<img src={nodeIcon} alt="node icon" />
+							<p>React:</p>
+							<img src={reactIcon} alt="react icon" />
+							<p>Redux:</p>
+							<img src={reduxIcon} alt=" redux icon" />
+						</div>
+						<p className="bracket-2 ">{'}'}</p>
+						<p className="attribute ">
+							available=<span className="bracket-2">{'{'}</span>
+							<span className="bool">true</span>
+							<span className="bracket-2">{'}'}</span>
+						</p>
+						<p className="attribute ">
+							onClick=<span className="bracket-2">{'{'}</span>
+							<span className="bracket-3">{'()'}</span>
+							<span className="bool">{' => '}</span>
+							<span>
+								{' '}
+								<Link to="/about" className="function">
+									aboutMe
+									<span className="bracket-3">{'()'}</span>
+								</Link>
+							</span>
+							<span className="bracket-2">{'}'}</span>
+							<span className="tag-fragment">{' />'}</span>
+						</p>
 					</div>
-					<p className="bracket-2 ">{'}'}</p>
-					<p className="attribute ">
-						available=<span className="bracket-2">{'{'}</span>
-						<span className="bool">true</span>
-						<span className="bracket-2">{'}'}</span>
-					</p>
-					<p className="attribute ">
-						onClick=<span className="bracket-2">{'{'}</span>
-						<span className="bracket-3">{'()'}</span>
-						<span className="bool">{' => '}</span>
-						<span>
-							{' '}
-							<Link to="/about" className="function">
-								aboutMe<span className="bracket-3">{'()'}</span>
-							</Link>
-						</span>
-						<span className="bracket-2">{'}'}</span>
-						<span className="tag-fragment">{' />'}</span>
-					</p>
 				</div>
+				<p className="tag-fragment">{'</>'}</p>
+				<p className="cursor">|</p>
 			</div>
-			<p className="tag-fragment">{'</>'}</p>
-			<p className="cursor">|</p>
 		</div>
 	);
 };

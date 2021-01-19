@@ -43,6 +43,16 @@
   opacity: 1;
   transition: opacity 0.3s;
 }
+.navbar nav .current {
+  color: #858585;
+  cursor: default;
+}
+.navbar nav .current:hover {
+  color: #858585;
+}
+.navbar nav .current:hover::after {
+  opacity: 0;
+}
 .navbar nav .burger {
   display: none;
   flex-direction: column;
