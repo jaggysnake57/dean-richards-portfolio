@@ -40,64 +40,58 @@ function App() {
 		<Router>
 			<div className="App">
 				<Navbar currentPage={currentPage} />
+
+				{/* navbar side */}
+
 				<div className="siteBackground">
 					<p>Dean Richards</p>
 				</div>
+				<Switch>
+					{/* home */}
+					<Route
+						exact
+						path="/"
+						render={(props) => (
+							<Home {...props} setCurrentPage={setCurrentPage} />
+						)}
+					/>
+					{/* about */}
+					<Route
+						exact
+						path="/about"
+						render={(props) => (
+							<About {...props} setCurrentPage={setCurrentPage} />
+						)}
+					/>
+					{/* projects */}
+					<Route
+						exact
+						path="/projects"
+						render={(props) => (
+							<Projects
+								{...props}
+								setCurrentPage={setCurrentPage}
+								setProjectName={setProjectName}
+								projectName={projectName}
+							/>
+						)}
+					/>
+					{/* contact */}
+					<Route
+						exact
+						path="/contact"
+						render={(props) => (
+							<Contact
+								{...props}
+								setCurrentPage={setCurrentPage}
+								openTag={openTag}
+								closeTag={closeTag}
+							/>
+						)}
+					/>
+					<Route component={NotFound} />
+				</Switch>
 
-				{/* navbar side */}
-				<div className="content">
-					<Switch>
-						{/* home */}
-						<Route
-							exact
-							path="/"
-							render={(props) => (
-								<Home
-									{...props}
-									setCurrentPage={setCurrentPage}
-								/>
-							)}
-						/>
-						{/* about */}
-						<Route
-							exact
-							path="/about"
-							render={(props) => (
-								<About
-									{...props}
-									setCurrentPage={setCurrentPage}
-								/>
-							)}
-						/>
-						{/* projects */}
-						<Route
-							exact
-							path="/projects"
-							render={(props) => (
-								<Projects
-									{...props}
-									setCurrentPage={setCurrentPage}
-									setProjectName={setProjectName}
-									projectName={projectName}
-								/>
-							)}
-						/>
-						{/* contact */}
-						<Route
-							exact
-							path="/contact"
-							render={(props) => (
-								<Contact
-									{...props}
-									setCurrentPage={setCurrentPage}
-									openTag={openTag}
-									closeTag={closeTag}
-								/>
-							)}
-						/>
-						<Route component={NotFound} />
-					</Switch>
-				</div>
 				<Footer />
 			</div>
 		</Router>

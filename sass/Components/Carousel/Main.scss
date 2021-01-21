@@ -1,0 +1,32 @@
+@import '../../vars';
+
+.carousel {
+	width: 100vw;
+	background-color: rgba(0, 0, 0, 0.2);
+	position: relative;
+	bottom: -28vh;
+	padding: 3rem 0;
+	.container {
+		display: flex;
+		justify-content: space-between;
+	}
+	.arrows {
+		font-size: 5rem;
+		color: $componentName;
+		display: grid;
+		place-content: center;
+	}
+	.carouselBody {
+		display: flex;
+		margin: 0 2rem;
+		justify-content: space-between;
+		flex-grow: 1;
+		img {
+			height: 300px;
+			cursor: pointer;
+		}
+	}
+	.selectedProject {
+		border: solid 3px $footer;
+	}
+}

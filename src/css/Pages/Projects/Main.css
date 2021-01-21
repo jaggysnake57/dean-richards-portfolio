@@ -1,56 +1,27 @@
-.projects .sidebar {
-  padding-top: 75px;
-  padding-left: 5px;
-  width: 0;
-  height: 100vh;
-  background-color: #252526;
-  position: fixed;
-  top: 0;
-}
-.projects .sidebar h2 {
-  color: white;
-  text-transform: uppercase;
-  text-align: center;
-  border-bottom: 1px solid darkgrey;
-  font-size: 1.1rem;
-}
-.projects .sidebar h3 {
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-  font-weight: 200;
-  margin-left: 20px;
+.projects {
+  min-height: 100vh;
+  z-index: 10;
   position: relative;
 }
-.projects .sidebar h3::before {
-  content: ">";
-  font-size: 1.2rem;
-  position: absolute;
-  left: -15px;
+.projects .projectContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 7rem;
 }
-.projects .sidebar h3.folderOpen::before {
-  transform: rotate(90deg);
-}
-.projects .sidebar h3 svg {
-  margin-right: 10px;
-  position: relative;
-  top: 2px;
-}
-.projects .projectTitles {
-  display: none;
+.projects .projectInfo {
   color: white;
-  border-left: solid 1px darkgrey;
-  padding-left: 20px;
-  margin-left: 10px;
-  cursor: pointer;
 }
-.projects .projectTitles svg {
-  margin-right: 5px;
+.projects .projectInfo h1 {
+  font-size: 2rem;
+  margin-bottom: 4rem;
 }
-.projects .folderOpen {
-  display: block;
+.projects .projectInfo p {
+  font-size: 1.5rem;
+  line-height: 2.3rem;
+  margin-bottom: 4rem;
 }
-.projects .mainContent {
-  margin-left: 0;
-  padding-top: 100px;
+.projects .projectInfo a {
+  color: #007acc;
+  text-decoration: none;
+  font-size: 1.5rem;
 }

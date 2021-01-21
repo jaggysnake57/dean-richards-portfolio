@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import IndividualProject from '../Components/IndividualProject';
 import ProjectsHome from '../Components/ProjectsHome';
 //css
@@ -6,65 +6,38 @@ import '../css/Pages/Projects/Main.css';
 import '../css/Pages/Projects/Responsive.css';
 import { projects } from '../data/projects';
 import { RiFolderFill, RiFile3Fill } from 'react-icons/ri';
+import { ProjectsContext } from '../contexts/ProjectsContext';
+import Carousel from '../Components/Carousel';
 
-const Projects = ({ setCurrentPage, setProjectName, projectName }) => {
-	const [catagories, setCatagories] = useState({});
+const Projects = ({ setCurrentPage }) => {
+	const { projects, currentProject } = useContext(ProjectsContext);
 
 	useEffect(() => {
-		document.body.classList.add('bodyBackground');
 		setCurrentPage('projects');
-		let temporaryCatagories = {};
-		projects.map((project) => {
-			project.category.map((tag) => {
-				if (temporaryCatagories.hasOwnProperty(tag)) {
-					temporaryCatagories[tag].push(project.name);
-				} else {
-					temporaryCatagories[tag] = [project.name];
-				}
-			});
-		});
-		setCatagories(temporaryCatagories);
 	}, []);
-
-	const openCategoryFolder = (e) => {
-		e.target.classList.toggle('folderOpen');
-		e.target.nextSibling.classList.toggle('folderOpen');
-	};
-
 	return (
 		<div className="projects">
-			<div className="sidebar">
-				<h2>My-Projects</h2>
-				{Object.entries(catagories).map((category) => {
-					let folder = (
-						<div className="folder">
-							<h3 onClick={(e) => openCategoryFolder(e)}>
-								<RiFolderFill />
-								{category[0]}
-							</h3>
-							<div className="projectTitles">
-								{category[1].map((projectName) => (
-									<div
-										onClick={() =>
-											setProjectName(projectName)
-										}>
-										<RiFile3Fill />
-										{projectName}
-									</div>
-								))}
-							</div>
-						</div>
-					);
-					return folder;
-				})}
+			<div className="pageBackground">
+				<p>PROJECTS</p>
 			</div>
-			<div className="mainContent">
-				{projectName === '' ? (
-					<ProjectsHome setProjectName={setProjectName} />
-				) : (
-					<IndividualProject projectName={projectName} />
-				)}
+			<div className="container">
+				<div className="projectContainer">
+					<div className="projectInfo">
+						<h1>{currentProject.name}</h1>
+						<p>{currentProject.blurb}</p>
+
+						<a href={currentProject.link}>Click Here To Visit</a>
+					</div>
+					<div className="projectImage">
+						<img
+							src={`${process.env.PUBLIC_URL}/${currentProject.imageName}`}
+							alt=""
+						/>
+					</div>
+				</div>
 			</div>
+
+			<Carousel />
 		</div>
 	);
 };

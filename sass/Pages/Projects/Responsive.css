@@ -1,8 +1,0 @@
-@media screen and (max-width: 550px) {
-  .projects .sidebar {
-    display: none;
-  }
-  .projects .mainContent {
-    margin-left: 75px;
-  }
-}

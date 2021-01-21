@@ -1,0 +1,30 @@
+.carousel {
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: relative;
+  bottom: -28vh;
+  padding: 3rem 0;
+}
+.carousel .container {
+  display: flex;
+  justify-content: space-between;
+}
+.carousel .arrows {
+  font-size: 5rem;
+  color: #4ebc7c;
+  display: grid;
+  place-content: center;
+}
+.carousel .carouselBody {
+  display: flex;
+  margin: 0 2rem;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+.carousel .carouselBody img {
+  height: 300px;
+  cursor: pointer;
+}
+.carousel .selectedProject {
+  border: solid 3px #007acc;
+}
