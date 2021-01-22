@@ -1,72 +1,77 @@
 @import '../../vars';
 .contact {
-	font-family: 'Inconsolata', monospace;
-	height: 100vh;
-	padding: 100px;
-	h1 {
-		font-size: 3rem;
-		margin-bottom: 60px;
-	}
-}
-.contactForm {
-	width: 60%;
-	.inputGroup {
+	.container {
 		display: flex;
-		align-items: flex-start;
-		font-size: 2rem;
-		margin-bottom: 30px;
-		p {
-			margin-right: 30px;
-			width: 30%;
-		}
-		input {
-			width: 70%;
-			margin-top: 1px;
-			border: none;
-			background-color: $topBar;
+		padding-top: 5rem;
+	}
+	.contactFormContainer {
+		flex: 1;
+		padding-right: 1rem;
+		h1 {
 			font-size: 2rem;
-			padding: 5px 10px;
-			font-weight: 200;
+			color: $componentName;
+			margin-bottom: 4rem;
+		}
+	}
+	.inputGroup {
+		margin-bottom: 3rem;
+		p {
+			font-size: 1.5rem;
+			color: $componentName;
+		}
+		input,
+		textarea {
+			width: 100%;
+			font-size: 1.5rem;
+			padding: 1rem;
+			border-radius: 5px;
+			border: none;
+			background-color: $defaultIcon;
 		}
 		textarea {
-			border: none;
-			background-color: $topBar;
-			width: 70%;
-			margin-top: 7px;
-			height: 200px;
+			height: 400px;
 			resize: none;
-			padding: 5px 10px;
-			font-size: 2rem;
-			font-family: 'Inconsolata', monospace;
 		}
 		button {
-			border: none;
-			background: none;
-			font-size: 2rem;
 			margin-left: auto;
-			cursor: pointer;
-			&:hover {
-				opacity: 0.7;
-				transition: 0.2s ease-in;
-			}
+			font-size: 1.4rem;
+			padding: 0.5rem 4rem;
+			background-color: $footer;
+			display: block;
+			border: none;
 		}
 	}
 }
 
 .social {
-	font-size: 3rem;
-	a {
-		text-decoration: none;
-		color: $defaultIcon;
-		margin-right: 20px;
-		&:hover {
-			color: white;
-			transition: 0.2s ease-in;
+	flex: 1;
+	padding-left: 1rem;
+	.twitterBlock {
+		margin-bottom: 3rem;
+		display: flex;
+		justify-content: center;
+		iframe {
+			background-color: $tabBar;
 		}
 	}
 	h3 {
-		font-size: 2rem;
+		font-size: 1.3rem;
 		color: white;
-		margin-bottom: 20px;
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+	.socialIcons {
+		// background-color: blue;
+		font-size: 5rem;
+		width: 50%;
+		margin: auto;
+		display: flex;
+		justify-content: space-between;
+		a {
+			color: white;
+			&:hover {
+				color: $componentName;
+			}
+		}
 	}
 }

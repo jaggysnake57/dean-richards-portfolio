@@ -45,80 +45,103 @@ const Contact = ({ setCurrentPage, openTag, closeTag }) => {
 	}, []);
 	return (
 		<div className="contact">
-			<h1 className="component">
-				<span className="tag-fragment">{'<'}</span>Get In Touch
-				<span className="tag-fragment">{' />'}</span>
-			</h1>
-
-			<form className="contactForm" onSubmit={(e) => sendEmail(e)}>
-				<div className="inputGroup">
-					<p>{openTag('Name')}</p>
-					<input
-						type="text"
-						value={name}
-						onChange={(e) => setName(e.target.value)}
-						name="name"
-						required
-					/>
+			<div className="pageBackground">
+				<p>CONTACT</p>
+			</div>
+			<div className="container">
+				<div className="contactFormContainer">
+					<h1>Get In Touch</h1>
+					<form
+						className="contactForm"
+						onSubmit={(e) => sendEmail(e)}>
+						<div className="inputGroup">
+							<p>Name</p>
+							<input
+								type="text"
+								value={name}
+								onChange={(e) => setName(e.target.value)}
+								name="name"
+								required
+							/>
+						</div>
+						<div className="inputGroup">
+							<p>Email</p>
+							<input
+								type="email"
+								value={email}
+								onChange={(e) => setEmail(e.target.value)}
+								name="email"
+								required
+							/>
+						</div>
+						<div className="inputGroup textArea">
+							<p>Message</p>
+							<textarea
+								value={message}
+								onChange={(e) => setMessage(e.target.value)}
+								name="message"
+								required
+							/>
+						</div>
+						<div className="inputGroup">
+							<button>Send</button>
+						</div>
+					</form>
 				</div>
-				<div className="inputGroup">
-					<p>{openTag('Email')}</p>
-					<input
-						type="email"
-						value={email}
-						onChange={(e) => setEmail(e.target.value)}
-						name="email"
-						required
-					/>
+
+				{/* social media tags */}
+				<div className="social">
+					<div className="twitterBlock">
+						<a
+							class="twitter-timeline"
+							data-width="500"
+							data-height="550"
+							data-theme="dark"
+							data-chrome="noheader nofooter transparent noscrollbar noborders"
+							href="https://twitter.com/jaggysnake57?ref_src=twsrc%5Etfw">
+							Tweets by jaggysnake57
+						</a>
+					</div>
+					{/* <script
+						async
+						src="https://platform.twitter.com/widgets.js"
+						charset="utf-8"></script>
+					<script
+						async
+						src="https://platform.twitter.com/widgets.js"
+						charset="utf-8"></script> */}
+					<h3>You can also reach me here - </h3>
+					<div className="socialIcons">
+						{/* facebook =  https://fb.me/DeanRichardsWebDev */}
+						<a
+							href="https://fb.me/DeanRichardsWebDev"
+							rel="noreferrer"
+							target="_blank">
+							<RiFacebookCircleLine />
+						</a>
+						{/* messenger = https://m.me/DeanRichardsWebDev  */}
+						<a
+							href="https://m.me/DeanRichardsWebDev"
+							rel="noreferrer"
+							target="_blank">
+							<RiMessengerLine />
+						</a>
+						{/* linked in  = www.linkedin.com/in/DeanRichardsWebDev1981*/}
+						<a
+							href="https://www.linkedin.com/in/DeanRichardsWebDev1981"
+							rel="noreferrer"
+							target="_blank">
+							<RiLinkedinBoxLine />
+						</a>
+						{/* twitter =  https://twitter.com/jaggysnake57 */}
+						<a
+							href="https://twitter.com/jaggysnake57"
+							rel="noreferrer"
+							target="_blank">
+							<RiTwitterLine />
+						</a>
+					</div>
 				</div>
-				<div className="inputGroup textArea">
-					<p>{openTag('Message')}</p>
-					<textarea
-						value={message}
-						onChange={(e) => setMessage(e.target.value)}
-						name="message"
-						required
-					/>
-				</div>
-				<div className="inputGroup">
-					<button>{openTag('Send')}</button>
-				</div>
-			</form>
-
-			{/* social media tags */}
-			<div className="social">
-				<h3>You can also reach me here - </h3>
-				{/* facebook =  https://fb.me/DeanRichardsWebDev */}
-				<a
-					href="https://fb.me/DeanRichardsWebDev"
-					rel="noreferrer"
-					target="_blank">
-					<RiFacebookCircleLine />
-				</a>
-
-				{/* messenger = https://m.me/DeanRichardsWebDev  */}
-				<a
-					href="https://m.me/DeanRichardsWebDev"
-					rel="noreferrer"
-					target="_blank">
-					<RiMessengerLine />
-				</a>
-
-				{/* linked in  = www.linkedin.com/in/DeanRichardsWebDev1981*/}
-				<a
-					href="https://www.linkedin.com/in/DeanRichardsWebDev1981"
-					rel="noreferrer"
-					target="_blank">
-					<RiLinkedinBoxLine />
-				</a>
-
-				{/* twitter =  https://twitter.com/jaggysnake57 */}
-				<a
-					href="https://twitter.com/jaggysnake57"
-					rel="noreferrer"
-					target="_blank">
-					<RiTwitterLine />
-				</a>
 			</div>
 		</div>
 	);

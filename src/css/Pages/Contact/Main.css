@@ -1,72 +1,73 @@
-.contact {
-  font-family: "Inconsolata", monospace;
-  height: 100vh;
-  padding: 100px;
-}
-.contact h1 {
-  font-size: 3rem;
-  margin-bottom: 60px;
-}
-
-.contactForm {
-  width: 60%;
-}
-.contactForm .inputGroup {
+.contact .container {
   display: flex;
-  align-items: flex-start;
+  padding-top: 5rem;
+}
+.contact .contactFormContainer {
+  flex: 1;
+  padding-right: 1rem;
+}
+.contact .contactFormContainer h1 {
   font-size: 2rem;
-  margin-bottom: 30px;
+  color: #4ebc7c;
+  margin-bottom: 4rem;
 }
-.contactForm .inputGroup p {
-  margin-right: 30px;
-  width: 30%;
+.contact .inputGroup {
+  margin-bottom: 3rem;
 }
-.contactForm .inputGroup input {
-  width: 70%;
-  margin-top: 1px;
+.contact .inputGroup p {
+  font-size: 1.5rem;
+  color: #4ebc7c;
+}
+.contact .inputGroup input,
+.contact .inputGroup textarea {
+  width: 100%;
+  font-size: 1.5rem;
+  padding: 1rem;
+  border-radius: 5px;
   border: none;
-  background-color: #3c3c3c;
-  font-size: 2rem;
-  padding: 5px 10px;
-  font-weight: 200;
+  background-color: #858585;
 }
-.contactForm .inputGroup textarea {
-  border: none;
-  background-color: #3c3c3c;
-  width: 70%;
-  margin-top: 7px;
-  height: 200px;
+.contact .inputGroup textarea {
+  height: 400px;
   resize: none;
-  padding: 5px 10px;
-  font-size: 2rem;
-  font-family: "Inconsolata", monospace;
 }
-.contactForm .inputGroup button {
-  border: none;
-  background: none;
-  font-size: 2rem;
+.contact .inputGroup button {
   margin-left: auto;
-  cursor: pointer;
-}
-.contactForm .inputGroup button:hover {
-  opacity: 0.7;
-  transition: 0.2s ease-in;
+  font-size: 1.4rem;
+  padding: 0.5rem 4rem;
+  background-color: #007acc;
+  display: block;
+  border: none;
 }
 
 .social {
-  font-size: 3rem;
+  flex: 1;
+  padding-left: 1rem;
 }
-.social a {
-  text-decoration: none;
-  color: #858585;
-  margin-right: 20px;
+.social .twitterBlock {
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
 }
-.social a:hover {
-  color: white;
-  transition: 0.2s ease-in;
+.social .twitterBlock iframe {
+  background-color: #252526;
 }
 .social h3 {
-  font-size: 2rem;
+  font-size: 1.3rem;
   color: white;
-  margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.social .socialIcons {
+  font-size: 5rem;
+  width: 50%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.social .socialIcons a {
+  color: white;
+}
+.social .socialIcons a:hover {
+  color: #4ebc7c;
 }

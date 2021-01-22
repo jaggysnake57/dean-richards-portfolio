@@ -10,25 +10,6 @@ const About = ({ setCurrentPage }) => {
 		setCurrentPage('about');
 	}, []);
 
-	const openTag = (tagName) => {
-		return (
-			<>
-				<span className="tag-fragment">{'<'}</span>
-				<span className="bool">{tagName}</span>
-				<span className="tag-fragment">{'>'}</span>
-			</>
-		);
-	};
-	const closeTag = (tagName) => {
-		return (
-			<>
-				<span className="tag-fragment">{'<'}</span>
-				<span className="bool">{tagName}</span>
-				<span className="tag-fragment">{'/>'}</span>
-			</>
-		);
-	};
-
 	return (
 		<div className="about">
 			<div className="pageBackground">
