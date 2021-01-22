@@ -9,7 +9,7 @@ import { RiFolderFill, RiFile3Fill } from 'react-icons/ri';
 import { ProjectsContext } from '../contexts/ProjectsContext';
 import Carousel from '../Components/Carousel';
 
-const Projects = ({ setCurrentPage }) => {
+const Projects = ({ setCurrentPage, currentPage }) => {
 	const { projects, currentProject } = useContext(ProjectsContext);
 
 	useEffect(() => {
@@ -37,7 +37,7 @@ const Projects = ({ setCurrentPage }) => {
 				</div>
 			</div>
 
-			<Carousel />
+			<Carousel currentPage={currentPage} />
 		</div>
 	);
 };

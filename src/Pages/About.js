@@ -2,10 +2,11 @@ import React, { useEffect } from 'react';
 // css
 import '../css/Pages/About/Main.css';
 import '../css/Pages/About/Responsive.css';
+import Carousel from '../Components/Carousel';
 
 import me from '../images/dummy.jpg';
 
-const About = ({ setCurrentPage }) => {
+const About = ({ setCurrentPage, currentPage }) => {
 	useEffect(() => {
 		setCurrentPage('about');
 	}, []);
@@ -29,6 +30,7 @@ const About = ({ setCurrentPage }) => {
 					dicta eligendi. Impedit magni ullam sint.
 				</p>
 			</div>
+			<Carousel currentPage={currentPage} />
 		</div>
 	);
 };

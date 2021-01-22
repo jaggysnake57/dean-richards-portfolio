@@ -3,8 +3,8 @@
 .carousel {
 	width: 100vw;
 	background-color: rgba(0, 0, 0, 0.2);
-	position: relative;
-	bottom: -28vh;
+	position: absolute;
+	bottom: 16%;
 	padding: 3rem 0;
 	.container {
 		display: flex;
@@ -29,4 +29,7 @@
 	.selectedProject {
 		border: solid 3px $footer;
 	}
+}
+.about .carousel {
+	bottom: 3%;
 }

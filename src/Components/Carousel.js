@@ -1,14 +1,18 @@
 import React, { useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import { ProjectsContext } from '../contexts/ProjectsContext';
 import '../css/Components/Carousel/Main.css';
 import '../css/Components/Carousel/responsive.css';
 import { AiOutlineLeft } from 'react-icons/ai';
 import { AiOutlineRight } from 'react-icons/ai';
 
-const Carousel = () => {
+const Carousel = ({ currentPage }) => {
 	const { projects, currentProject, setCurrentProject } = useContext(
 		ProjectsContext
 	);
+
+	let history = useHistory();
+
 	const changeProject = (newProject) => {
 		let nextP;
 		if (currentProject !== newProject) {
@@ -19,6 +23,10 @@ const Carousel = () => {
 			});
 
 			setCurrentProject(nextP);
+			console.log(currentPage);
+			if (currentPage === 'about') {
+				history.push('/projects');
+			}
 		}
 	};
 	return (

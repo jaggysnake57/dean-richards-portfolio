@@ -60,7 +60,11 @@ function App() {
 						exact
 						path="/about"
 						render={(props) => (
-							<About {...props} setCurrentPage={setCurrentPage} />
+							<About
+								{...props}
+								setCurrentPage={setCurrentPage}
+								currentPage={currentPage}
+							/>
 						)}
 					/>
 					{/* projects */}
@@ -71,8 +75,7 @@ function App() {
 							<Projects
 								{...props}
 								setCurrentPage={setCurrentPage}
-								setProjectName={setProjectName}
-								projectName={projectName}
+								currentPage={currentPage}
 							/>
 						)}
 					/>
