@@ -1,12 +1,12 @@
 @import '../../vars';
 .home {
 	height: 100vh;
-	font-size: 3rem;
+	font-size: 4.2rem;
 	padding-top: 80px;
 	font-family: 'Inconsolata', monospace;
 	img {
 		object-fit: contain;
-		height: 2.3rem;
+		height: 4rem;
 	}
 }
 .tag-fragment {
@@ -35,7 +35,7 @@
 .object {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	width: 500px;
+	width: 600px;
 	align-items: center;
 	img {
 		justify-self: center;
