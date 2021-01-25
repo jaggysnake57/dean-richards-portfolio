@@ -3,8 +3,8 @@
 .carousel {
 	width: 100vw;
 	background-color: rgba(0, 0, 0, 0.2);
-	position: absolute;
-	bottom: 16%;
+	position: fixed;
+	bottom: 0%;
 	padding: 3rem 0;
 	.container {
 		display: flex;
@@ -17,10 +17,6 @@
 		place-content: center;
 	}
 	.carouselBody {
-		display: flex;
-		margin: 0 2rem;
-		justify-content: space-between;
-		flex-grow: 1;
 		img {
 			height: 300px;
 			cursor: pointer;

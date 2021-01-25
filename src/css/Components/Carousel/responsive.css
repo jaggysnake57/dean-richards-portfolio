@@ -1,1 +1,15 @@
-
+@media (max-width: 1920px) {
+  .carousel .carouselBody img {
+    height: 250px;
+  }
+}
+@media (max-width: 1300px) {
+  .carousel .carouselBody img {
+    height: 200px;
+  }
+}
+@media (max-width: 400px) {
+  .carousel .carouselBody img {
+    height: 150px;
+  }
+}
