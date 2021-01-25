@@ -1,14 +1,14 @@
 .about {
   min-height: 98vh;
 }
-.about .container h1 {
+.about h1 {
   color: white;
   font-size: 2rem;
   margin-top: 10rem;
-  margin-bottom: 7rem;
+  margin-bottom: 4rem;
 }
-.about .container p {
+.about p {
   font-size: 1.5rem;
   color: white;
-  width: 50%;
+  width: 70%;
 }

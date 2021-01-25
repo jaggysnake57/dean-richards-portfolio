@@ -1,13 +1,27 @@
-@media screen and (max-width: 550px) {
+@media (max-width: 1920px) {
 	.about {
-		grid-template-columns: 1fr;
-		font-size: 1rem;
-		padding-left: 70px;
-		.myImage {
-			img {
-				width: 80%;
-				margin: 0 auto;
-			}
+		h1 {
+			margin-top: 5rem;
+			margin-bottom: 2rem;
+		}
+	}
+}
+
+@media (max-width: 1024px) {
+	.about {
+		p {
+			width: 100%;
+		}
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.about {
+		h1 {
+			margin-top: 1rem;
+		}
+		p {
+			font-size: 1.2rem;
 		}
 	}
 }
