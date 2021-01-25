@@ -2,6 +2,8 @@
 .navbar {
 	background-color: $tabBar;
 	padding: 5px 0;
+	position: relative;
+
 	.container {
 		display: flex;
 		justify-content: space-between;
@@ -55,17 +57,18 @@
 				}
 			}
 		}
-		.burger {
-			display: none;
-			// display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-			padding: 3px 0;
-			div {
-				width: 40px;
-				height: 3px;
-				background-color: white;
-			}
-		}
+	}
+}
+.burger {
+	display: none;
+	// display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 3px 0;
+	height: 35px;
+	div {
+		width: 40px;
+		height: 3px;
+		background-color: white;
 	}
 }

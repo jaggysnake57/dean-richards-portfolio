@@ -1,6 +1,7 @@
 .navbar {
   background-color: #252526;
   padding: 5px 0;
+  position: relative;
 }
 .navbar .container {
   display: flex;
@@ -54,13 +55,15 @@
 .navbar nav .current:hover::after {
   opacity: 0;
 }
-.navbar nav .burger {
+
+.burger {
   display: none;
   flex-direction: column;
   justify-content: space-between;
   padding: 3px 0;
+  height: 35px;
 }
-.navbar nav .burger div {
+.burger div {
   width: 40px;
   height: 3px;
   background-color: white;

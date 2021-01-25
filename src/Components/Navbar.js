@@ -1,16 +1,17 @@
 //react
-import React from 'react';
+import React, { useState } from 'react';
 //icons
 import { Link } from 'react-router-dom';
 
 import { BsCollection } from 'react-icons/bs';
-import { RiUser3Line, RiHomeLine, RiMailSendLine } from 'react-icons/ri';
+import { AiOutlineClose } from 'react-icons/ai';
 
 //css
 import '../css/Components/Navbar/Main.css';
 import '../css/Components/Navbar/Responsive.css';
 
 const Navbar = ({ currentPage }) => {
+	const [navMenuOpen, setNavMenuOpen] = useState(false);
 	return (
 		<div className="navbar">
 			<div className="container">
@@ -23,7 +24,7 @@ const Navbar = ({ currentPage }) => {
 						Dean Richards
 					</Link>
 				</div>
-				<nav>
+				<nav className={navMenuOpen ? 'open' : null}>
 					<Link
 						to="/"
 						className={
@@ -52,12 +53,15 @@ const Navbar = ({ currentPage }) => {
 						}>
 						Contact
 					</Link>
-					<div className="burger">
-						<div></div>
-						<div></div>
-						<div></div>
-					</div>
 				</nav>
+				<div
+					className="burger"
+					onClick={() => setNavMenuOpen(!navMenuOpen)}>
+					<div></div>
+					<div></div>
+					<div></div>
+					<AiOutlineClose />
+				</div>
 			</div>
 		</div>
 	);

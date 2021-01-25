@@ -1,0 +1,64 @@
+@import '../../vars';
+
+@media (max-width: 900px) {
+	.burger {
+		display: flex;
+		position: relative;
+		div {
+			visibility: visible;
+			transition: visibility;
+			transition-delay: 0.3s;
+		}
+		svg {
+			visibility: hidden;
+			position: absolute;
+			transition: visibility;
+			transition-delay: 0.1s;
+			left: 10%;
+			font-size: 2rem;
+			color: white;
+		}
+	}
+	.navbar {
+		nav {
+			position: absolute;
+			width: 100%;
+			max-width: 2000px;
+			top: -600%;
+			left: 0;
+			flex-direction: column;
+			align-items: center;
+			padding: 1rem 0;
+			background-color: $topBar;
+			transition: top 0.5s;
+			a {
+				margin-bottom: 1.5rem;
+			}
+		}
+		nav.open {
+			top: 100%;
+			transition: top 0.5s;
+		}
+		nav.open + .burger {
+			div {
+				visibility: hidden;
+				transition: visibility;
+				transition-delay: 0.1s;
+			}
+			svg {
+				visibility: visible;
+				transition: visibility;
+				transition-delay: 0.32s;
+			}
+		}
+	}
+}
+@media (max-width: 550px) {
+	.navbar {
+		.brand {
+			a {
+				font-size: 1.5rem;
+			}
+		}
+	}
+}
