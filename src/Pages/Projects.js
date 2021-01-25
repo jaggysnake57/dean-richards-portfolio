@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import IndividualProject from '../Components/IndividualProject';
-import ProjectsHome from '../Components/ProjectsHome';
+
 //css
 import '../css/Pages/Projects/Main.css';
 import '../css/Pages/Projects/Responsive.css';

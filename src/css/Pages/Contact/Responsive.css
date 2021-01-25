@@ -1,33 +1,17 @@
+@media (max-width: 1024px) {
+  .contact .container {
+    display: block;
+  }
+
+  .social .twitterBlock {
+    display: none;
+  }
+}
 @media screen and (max-width: 550px) {
   .contact {
     width: 100%;
-    padding: 100px 20px 0 75px;
   }
   .contact h1 {
     font-size: 1.5rem;
-  }
-
-  .contactForm {
-    width: 100%;
-  }
-  .contactForm .inputGroup {
-    flex-direction: column;
-    font-size: 1.3rem;
-  }
-  .contactForm .inputGroup input {
-    width: 100%;
-  }
-  .contactForm .inputGroup textarea {
-    width: 100%;
-  }
-  .contactForm .inputGroup button {
-    font-size: 1.3rem;
-  }
-
-  .social {
-    text-align: center;
-  }
-  .social h3 {
-    font-size: 1.3rem;
   }
 }

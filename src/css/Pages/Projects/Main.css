@@ -25,6 +25,13 @@
   text-decoration: none;
   font-size: 1.5rem;
 }
+.projects .projectImage {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
 .projects .projectImage img {
   width: 100%;
+  max-width: 500px;
+  object-fit: contain;
 }
