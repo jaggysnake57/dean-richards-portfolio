@@ -4,6 +4,7 @@
   position: fixed;
   bottom: 0%;
   padding: 3rem 0;
+  backdrop-filter: blur(1rem);
 }
 .carousel .container {
   display: flex;
