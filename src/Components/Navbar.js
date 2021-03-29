@@ -1,7 +1,7 @@
 //react
 import React, { useState } from 'react';
 //icons
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import { BsCollection } from 'react-icons/bs';
 import { AiOutlineClose } from 'react-icons/ai';
@@ -11,7 +11,15 @@ import '../css/Components/Navbar/Main.css';
 import '../css/Components/Navbar/Responsive.css';
 
 const Navbar = ({ currentPage }) => {
+	const history = useHistory();
 	const [navMenuOpen, setNavMenuOpen] = useState(false);
+
+	history.listen(() => {
+		if (navMenuOpen) {
+			setNavMenuOpen(false);
+		}
+	});
+
 	return (
 		<div className="navbar">
 			<div className="container">
