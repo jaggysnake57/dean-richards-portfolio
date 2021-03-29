@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 //components
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
+import Helmet from 'react-helmet';
 //pages
 import Home from './Pages/Home';
 import About from './Pages/About';
@@ -46,6 +47,13 @@ function App() {
 				<div className="siteBackground">
 					<p>Dean Richards</p>
 				</div>
+				<Helmet>
+					<title>
+						Dean Richards |{' '}
+						{currentPage.charAt(0).toUpperCase() +
+							currentPage.slice(1)}
+					</title>
+				</Helmet>
 				<Switch>
 					{/* home */}
 					<Route
