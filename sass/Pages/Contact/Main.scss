@@ -4,6 +4,32 @@
 		display: flex;
 		padding-top: 5rem;
 	}
+	.messagePageCover {
+		width: 100vw;
+		height: 100vh;
+		position: absolute;
+		background-color: rgba(0, 0, 0, 0.7);
+		z-index: 20;
+		display: grid;
+		place-content: center;
+	}
+	.messageBox {
+		background-color: $componentName;
+		padding: 5rem;
+		font-size: 1.3rem;
+		color: white;
+		p {
+			margin-bottom: 2rem;
+		}
+		button {
+			margin-left: auto;
+			font-size: 1.3rem;
+			padding: 0.5rem 4rem;
+			background-color: $footer;
+			display: block;
+			border: none;
+		}
+	}
 	.contactFormContainer {
 		flex: 1;
 		padding-right: 1rem;
@@ -46,6 +72,13 @@
 .social {
 	flex: 1;
 	padding-left: 1rem;
+	div:first-of-type {
+		display: flex;
+		justify-content: center;
+	}
+	iframe {
+		width: 100% !important;
+	}
 	.twitterBlock {
 		margin-bottom: 3rem;
 		display: flex;

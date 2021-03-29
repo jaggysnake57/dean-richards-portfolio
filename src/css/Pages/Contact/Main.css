@@ -2,6 +2,32 @@
   display: flex;
   padding-top: 5rem;
 }
+.contact .messagePageCover {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 20;
+  display: grid;
+  place-content: center;
+}
+.contact .messageBox {
+  background-color: #4ebc7c;
+  padding: 5rem;
+  font-size: 1.3rem;
+  color: white;
+}
+.contact .messageBox p {
+  margin-bottom: 2rem;
+}
+.contact .messageBox button {
+  margin-left: auto;
+  font-size: 1.3rem;
+  padding: 0.5rem 4rem;
+  background-color: #007acc;
+  display: block;
+  border: none;
+}
 .contact .contactFormContainer {
   flex: 1;
   padding-right: 1rem;
@@ -43,6 +69,13 @@
 .social {
   flex: 1;
   padding-left: 1rem;
+}
+.social div:first-of-type {
+  display: flex;
+  justify-content: center;
+}
+.social iframe {
+  width: 100% !important;
 }
 .social .twitterBlock {
   margin-bottom: 3rem;

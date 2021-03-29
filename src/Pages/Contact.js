@@ -7,22 +7,20 @@ import {
 	RiTwitterLine,
 } from 'react-icons/ri';
 
+import { TwitterTweetEmbed } from 'react-twitter-embed';
+
 //css
 import '../css/Pages/Contact/Main.css';
 import '../css/Pages/Contact/Responsive.css';
-
-// RiFacebookCircleLine, RiMessengerLine, RiLinkedinBoxLine, RiTwitterLine
-// AiOutlineLinkedin
-// FiTwitter
 
 const Contact = ({ setCurrentPage, openTag, closeTag }) => {
 	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
 	const [message, setMessage] = useState('');
+	const [modalMessage, setModalMessage] = useState('');
 
 	const sendEmail = (e) => {
 		e.preventDefault();
-		console.log(e.target);
 		emailjs
 			.sendForm(
 				'service_bqnpjhx',
@@ -32,9 +30,24 @@ const Contact = ({ setCurrentPage, openTag, closeTag }) => {
 			)
 			.then(
 				(result) => {
-					console.log(result.text);
+					if (result.text && result.text === 'OK') {
+						setModalMessage(
+							`Thank you for your inquiry, ${name}. I will be in touch soon`
+						);
+						setName('');
+						setEmail('');
+						setMessage('');
+					} else {
+						setModalMessage(
+							'There seams to be an issue, please try again'
+						);
+						console.log(result.text);
+					}
 				},
 				(error) => {
+					setModalMessage(
+						'There seams to be an issue, please try again'
+					);
 					console.log(error.text);
 				}
 			);
@@ -43,8 +56,17 @@ const Contact = ({ setCurrentPage, openTag, closeTag }) => {
 	useEffect(() => {
 		setCurrentPage('contact');
 	}, []);
+
 	return (
 		<div className="contact">
+			{modalMessage && (
+				<div className="messagePageCover">
+					<div className="messageBox">
+						<p>{modalMessage}</p>
+						<button onClick={() => setModalMessage('')}>OK</button>
+					</div>
+				</div>
+			)}
 			<div className="pageBackground">
 				<p>CONTACT</p>
 			</div>
@@ -91,26 +113,12 @@ const Contact = ({ setCurrentPage, openTag, closeTag }) => {
 
 				{/* social media tags */}
 				<div className="social">
-					<div className="twitterBlock">
-						<a
-							class="twitter-timeline"
-							data-width="500"
-							data-height="550"
-							data-theme="dark"
-							data-chrome="noheader nofooter transparent noscrollbar noborders"
-							href="https://twitter.com/jaggysnake57?ref_src=twsrc%5Etfw">
-							Tweets by jaggysnake57
-						</a>
-					</div>
-					{/* <script
-						async
-						src="https://platform.twitter.com/widgets.js"
-						charset="utf-8"></script>
-					<script
-						async
-						src="https://platform.twitter.com/widgets.js"
-						charset="utf-8"></script> */}
+					<TwitterTweetEmbed
+						tweetId={'1376454932249853961'}
+						placeholder="loading"
+					/>
 					<h3>You can also reach me here - </h3>
+
 					<div className="socialIcons">
 						{/* facebook =  https://fb.me/DeanRichardsWebDev */}
 						<a
