@@ -103,7 +103,7 @@ function App() {
 					<Route component={NotFound} />
 				</Switch>
 
-				<Footer />
+				{/* <Footer /> */}
 			</div>
 		</Router>
 	);

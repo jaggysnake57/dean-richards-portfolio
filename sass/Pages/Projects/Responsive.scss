@@ -13,6 +13,7 @@
 		.projectContainer {
 			grid-template-columns: 1fr;
 			margin-top: 2rem;
+			margin-bottom: 150px;
 		}
 		.projectInfo {
 			color: white;
@@ -34,7 +35,7 @@
 			order: -1;
 			margin-bottom: 2rem;
 			img {
-				max-width: 400px;
+				max-width: 300px;
 			}
 		}
 	}

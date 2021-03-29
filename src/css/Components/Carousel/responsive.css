@@ -8,8 +8,14 @@
     height: 200px;
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 760px) {
+  .carousel {
+    padding: 1rem 0;
+  }
+  .carousel .carouselBody {
+    width: 100px;
+  }
   .carousel .carouselBody img {
-    height: 150px;
+    height: 100px;
   }
 }

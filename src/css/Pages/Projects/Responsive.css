@@ -7,6 +7,7 @@
   .projects .projectContainer {
     grid-template-columns: 1fr;
     margin-top: 2rem;
+    margin-bottom: 150px;
   }
   .projects .projectInfo {
     color: white;
@@ -28,6 +29,6 @@
     margin-bottom: 2rem;
   }
   .projects .projectImage img {
-    max-width: 400px;
+    max-width: 300px;
   }
 }
