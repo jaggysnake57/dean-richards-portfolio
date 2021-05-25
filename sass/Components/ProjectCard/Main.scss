@@ -1,0 +1,111 @@
+@import '../../vars';
+
+.project-card {
+	position: relative;
+	overflow: hidden;
+
+	&__image {
+		img {
+			max-width: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__details {
+		background-color: white;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		padding: 1rem;
+		opacity: 1;
+
+		// clip-path: polygon(100% 100%, 100% 0, 100% 100%, 100% 100%);
+		clip-path: polygon(100% 50%, 100% 50%, 100% 50%, 100% 50%);
+	}
+
+	&__title {
+		font-size: 2em;
+		margin-bottom: 1rem;
+		margin-top: 1vw;
+		@media (max-width: 43rem) {
+			font-size: clamp(1.1em, 4vw, 1.7em);
+		}
+	}
+
+	&__links {
+		display: flex;
+		justify-content: space-between;
+		position: absolute;
+		bottom: 5%;
+		left: 0;
+		width: 100%;
+		padding: 0 1rem;
+	}
+
+	&__link {
+		@media (max-width: 43rem) {
+			font-size: 0.8em;
+			width: auto !important;
+			padding: 0.5rem 0.8rem !important;
+		}
+	}
+
+	&__blurb {
+		@media (max-width: 43rem) {
+			line-height: clamp(1em, 4vw, 1.5em);
+			font-size: clamp(0.9em, 4vw, 1.5em);
+		}
+	}
+
+	&__show-details {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		background-color: $footer;
+		right: 0;
+		font-size: 2rem;
+		color: white;
+		padding: 0.5rem;
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+		z-index: 3;
+		transition: bottom 500ms;
+
+		&:hover {
+			opacity: 0.5;
+		}
+	}
+	.details-open {
+		bottom: 90%;
+		& + .project-card__details {
+			animation: showCard 500ms ease-in-out forwards;
+		}
+	}
+	.details-closed {
+		& + .project-card__details {
+			animation: hideCard 500ms ease-in-out forwards;
+		}
+	}
+}
+
+@keyframes showCard {
+	0% {
+		clip-path: polygon(100% 50%, 100% 50%, 100% 50%, 100% 50%);
+	}
+
+	100% {
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+	}
+}
+@keyframes hideCard {
+	0% {
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+	}
+
+	100% {
+		clip-path: polygon(100% 50%, 100% 50%, 100% 50%, 100% 50%);
+	}
+}

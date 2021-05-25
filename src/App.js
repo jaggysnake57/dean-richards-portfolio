@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 //components
 import Navbar from './Components/Navbar';
@@ -13,10 +13,15 @@ import Contact from './Pages/Contact';
 import './css/App.css';
 import TabBar from './Components/TabBar';
 import NotFound from './Pages/NotFound';
+import Signin from './Pages/Signin';
+import { auth, db } from './firebase';
+import { useStateValue } from './contexts/ProjectsContext';
 
 function App() {
 	const [currentPage, setCurrentPage] = useState('home');
 	const [projectName, setProjectName] = useState('');
+
+	const [{ userId }, dispatch] = useStateValue();
 
 	const openTag = (tagName) => {
 		return (
@@ -36,6 +41,49 @@ function App() {
 			</>
 		);
 	};
+
+	useEffect(() => {
+		const isAdmin = async (uid) => {
+			try {
+				const data = await db
+					.collection('authenticatedUsers')
+					.where('uid', '==', uid)
+					.get();
+				if (data.empty) {
+					console.log('nothing found');
+				} else {
+					data.docs.map((user) => {
+						if (user.admin) return true;
+					});
+				}
+			} catch (error) {
+				console.error(
+					'there has been an error in the isAdmin funtion',
+					error
+				);
+			}
+		};
+
+		auth.onAuthStateChanged((authUser) => {
+			if (authUser) {
+				dispatch({
+					type: 'ADD_USER',
+					uid: authUser.uid,
+				});
+				if (isAdmin(authUser.uid)) {
+					dispatch({
+						type: 'SET_ADMIN',
+					});
+				}
+			} else {
+				dispatch({
+					type: 'LOG_USER_OUT',
+				});
+
+				console.log('user logged out');
+			}
+		});
+	}, [userId]);
 
 	return (
 		<Router>
@@ -99,6 +147,11 @@ function App() {
 								closeTag={closeTag}
 							/>
 						)}
+					/>
+					<Route
+						exact
+						path="/signin"
+						render={(props) => <Signin {...props} />}
 					/>
 					<Route component={NotFound} />
 				</Switch>

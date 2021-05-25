@@ -1,12 +1,6 @@
 .container {
   width: 80%;
   margin: 0 auto;
-  max-width: 1920px;
-}
-@media (max-width: 42rem) {
-  .container {
-    width: 94%;
-  }
 }
 
 .pageBackground {
@@ -34,21 +28,6 @@
   font-size: 20rem;
   color: #4ebc7c;
   opacity: 0.13;
-}
-
-.button-link {
-  background-color: #007acc;
-  padding: 0.7em 0;
-  text-decoration: none;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 14rem;
-}
-.button-link svg {
-  margin-left: 0.5em;
-  font-size: 1.2em;
 }
 
 @media (max-width: 1920px) {

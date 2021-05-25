@@ -22,11 +22,13 @@
 		display: flex;
 		justify-content: space-between;
 		z-index: 100;
-		a {
+		a,
+		p {
 			color: white;
 			font-size: 1.5rem;
 			text-decoration: none;
 			position: relative;
+			cursor: pointer;
 			&::after {
 				content: '';
 				display: block;

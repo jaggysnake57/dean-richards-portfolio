@@ -1,38 +1,39 @@
 export const projects = [
 	{
-		name: 'Social Ape',
-		imageName: 'thumb-gray.png',
+		name: 'Whats in the Freezer',
+		imageName: 'freezer.png',
 		blurb:
-			'A simple React website with Redux, that was writen useing class based components.  I converted it to functional components and updated redux to use the redux tool-kit',
-		link: 'http://dean-richards.uk',
+			'A web based app for managing freezer space. If you have a full freezer but can never remember whats in there, this is the app for you. Built using React, redux and the redux tool kit this app uses Google firebase authentication and the cloud firestore.',
+		link: 'https://whats-in-the-fridge-f9f5b.web.app/',
 		featured: true,
-		category: ['mern', 'react', 'redux', 'firebase'],
+		category: ['react', 'redux', 'firebase'],
 	},
 	{
-		name: 'iMessage Clone',
-		imageName: 'imessage.jpg',
+		name: 'coffeeroasters',
+		imageName: 'coffee-site.png',
 		blurb:
-			'A basic iMessage clone that runs off firebase and uses the firebase authentication API. It uses firebase snapshots to update chats when a user adds a new message',
-		link: 'http://dean-richards.uk',
+			'Coffeeroasters is a concept design taken from the Frontend Mentor site. While it is currently does not have full functionality, there is visual functionality on the create order page. Full functionality is coming soon',
+		link: 'https://coffeeroasters-8f9f3.web.app/',
 		featured: true,
-		category: ['mern', 'react', 'redux', 'firebase'],
+		category: ['react'],
 	},
 
 	{
-		name: 'Dean Richards',
-		imageName: 'deanrichards.png',
-		blurb: 'Your looking at it!',
-		link: 'http://dean-richards.uk',
+		name: 'Where in the World',
+		imageName: 'flag-app.png',
+		blurb:
+			'Where in the World is another Frontend Mentor project. It uses the REST Countries API to pull in data and display them. Results can be filtered by region and searched. Individual results also link to other nations that boarder them. It uses the Context API in React and is hosted on Vercel.',
+		link: 'https://where-in-the-world-react.vercel.app/',
 		featured: true,
-		category: ['mern', 'react', 'redux', 'firebase'],
+		category: ['vercel', 'Context API', 'React'],
 	},
 	{
-		name: 'Instagram Clone',
-		imageName: 'deanrichards.png',
+		name: 'Dean Richards',
+		imageName: 'my-site.png',
 		blurb:
-			'A basic Instagram clone that runs off firebase and uses the firebase authentication API. It uses firebase snapshots to update chats when a user adds a new message',
-		link: 'http://dean-richards.uk',
+			'My own site. Currently built with React, uses the context API and uses emailjs for the contact form. It is hosted on Firebase.',
+		link: 'https://www.dean-richards.uk/',
 		featured: true,
-		category: ['mern', 'react', 'redux', 'firebase'],
+		category: ['react', 'context', 'firebase'],
 	},
 ];

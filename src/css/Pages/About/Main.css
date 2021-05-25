@@ -7,8 +7,10 @@
   margin-top: 10rem;
   margin-bottom: 4rem;
 }
-.about p {
-  font-size: 1.5rem;
+.about .container p {
+  font-size: 1.1rem;
   color: white;
   width: 70%;
+  line-height: 2rem;
+  margin-bottom: 2rem;
 }

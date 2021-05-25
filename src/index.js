@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom';
 import './css/index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import ProjectsContextProvider from './contexts/ProjectsContext';
+import { ProjectsContextProvider } from './contexts/ProjectsContext';
+import reducer, { initialState } from './contexts/reducer';
 
 ReactDOM.render(
 	<React.StrictMode>
-		<ProjectsContextProvider>
+		<ProjectsContextProvider initialState={initialState} reducer={reducer}>
 			<App />
 		</ProjectsContextProvider>
 	</React.StrictMode>,

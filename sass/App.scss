@@ -3,6 +3,10 @@
 .container {
 	width: 80%;
 	margin: 0 auto;
+	max-width: 1920px;
+	@media (max-width: 42rem) {
+		width: 94%;
+	}
 }
 .pageBackground {
 	position: fixed;
@@ -27,6 +31,21 @@
 		font-size: 20rem;
 		color: $componentName;
 		opacity: 0.13;
+	}
+}
+
+.button-link {
+	background-color: $footer;
+	padding: 0.7em 0;
+	text-decoration: none;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 14rem;
+	svg {
+		margin-left: 0.5em;
+		font-size: 1.2em;
 	}
 }
 

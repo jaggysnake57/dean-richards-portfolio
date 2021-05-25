@@ -9,10 +9,19 @@ import { AiOutlineClose } from 'react-icons/ai';
 //css
 import '../css/Components/Navbar/Main.css';
 import '../css/Components/Navbar/Responsive.css';
+import { auth } from '../firebase';
+import { useStateValue } from '../contexts/ProjectsContext';
 
 const Navbar = ({ currentPage }) => {
 	const history = useHistory();
 	const [navMenuOpen, setNavMenuOpen] = useState(false);
+
+	const [{ userId }, dispatch] = useStateValue();
+
+	const handleLogOut = () => {
+		auth.signOut();
+		console.log('log out clicked');
+	};
 
 	history.listen(() => {
 		if (navMenuOpen) {
@@ -61,6 +70,7 @@ const Navbar = ({ currentPage }) => {
 						}>
 						Contact
 					</Link>
+					{userId && <p onClick={() => handleLogOut()}>Sign out</p>}
 				</nav>
 				<div
 					className="burger"
