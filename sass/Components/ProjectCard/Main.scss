@@ -11,6 +11,23 @@
 		}
 	}
 
+	&__admin-buttons {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		display: flex;
+		.btn {
+			cursor: pointer;
+			font-family: 'Poppins', sans-serif;
+			width: auto;
+			padding: 1rem 1.5rem;
+			margin-right: 0.5rem;
+		}
+		.danger {
+			background-color: rgb(165, 15, 15);
+		}
+	}
+
 	&__details {
 		background-color: white;
 		position: absolute;

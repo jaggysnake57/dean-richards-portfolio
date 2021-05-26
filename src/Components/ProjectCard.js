@@ -3,13 +3,22 @@ import { BsBoxArrowLeft } from 'react-icons/bs';
 import { RiCloseFill } from 'react-icons/ri';
 
 import '../css/Components/ProjectCard/Main.css';
+import { useStateValue } from '../contexts/ProjectsContext';
 
 const ProjectCard = ({ openId, handleToggleDetails, projectId }) => {
+	const [{ isAdmin, userId }, dispatch] = useStateValue();
 	return (
 		<div className="project-card">
 			<div className="project-card__image">
 				<img src="https://imgur.com/hG8F4Q2.png" alt="" />
 			</div>
+
+			{isAdmin && userId && (
+				<div className="project-card__admin-buttons">
+					<button className="btn">Edit</button>
+					<button className="btn danger">Delete</button>
+				</div>
+			)}
 
 			<div
 				className={`project-card__show-details ${

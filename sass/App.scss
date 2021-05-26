@@ -34,7 +34,8 @@
 	}
 }
 
-.button-link {
+.button-link,
+.btn {
 	background-color: $footer;
 	padding: 0.7em 0;
 	text-decoration: none;
@@ -43,6 +44,7 @@
 	align-items: center;
 	justify-content: center;
 	width: 14rem;
+	border: none;
 	svg {
 		margin-left: 0.5em;
 		font-size: 1.2em;

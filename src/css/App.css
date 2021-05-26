@@ -36,7 +36,8 @@
   opacity: 0.13;
 }
 
-.button-link {
+.button-link,
+.btn {
   background-color: #007acc;
   padding: 0.7em 0;
   text-decoration: none;
@@ -45,8 +46,10 @@
   align-items: center;
   justify-content: center;
   width: 14rem;
+  border: none;
 }
-.button-link svg {
+.button-link svg,
+.btn svg {
   margin-left: 0.5em;
   font-size: 1.2em;
 }

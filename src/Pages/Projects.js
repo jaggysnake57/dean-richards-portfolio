@@ -14,6 +14,7 @@ import '../css/Pages/Projects/Main.css';
 import '../css/Pages/Projects/Responsive.css';
 import { useStateValue } from '../contexts/ProjectsContext';
 import ProjectCard from '../Components/ProjectCard';
+import AdminPanel from '../Components/AdminPanel';
 
 const Projects = ({ setCurrentPage, currentPage }) => {
 	const [{ isAdmin, userId, projects }, dispatch] = useStateValue();
@@ -69,6 +70,7 @@ const Projects = ({ setCurrentPage, currentPage }) => {
 				<p>PROJECTS</p>
 			</div>
 			<div className="container">
+				<AdminPanel />
 				<section className="hero">
 					<div
 						className="hero__image"

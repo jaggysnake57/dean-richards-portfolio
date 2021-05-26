@@ -6,6 +6,22 @@
   max-width: 100%;
   object-fit: cover;
 }
+.project-card__admin-buttons {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+}
+.project-card__admin-buttons .btn {
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  width: auto;
+  padding: 1rem 1.5rem;
+  margin-right: 0.5rem;
+}
+.project-card__admin-buttons .danger {
+  background-color: #a50f0f;
+}
 .project-card__details {
   background-color: white;
   position: absolute;
