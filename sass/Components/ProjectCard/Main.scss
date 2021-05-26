@@ -5,9 +5,14 @@
 	overflow: hidden;
 
 	&__image {
+		width: 100%;
+
+		padding-top: 56.25%;
+		background-position: center top;
+		background-size: cover;
+		background-repeat: no-repeat;
 		img {
 			max-width: 100%;
-			object-fit: cover;
 		}
 	}
 
@@ -29,7 +34,7 @@
 	}
 
 	&__details {
-		background-color: white;
+		background-color: $inactiveTab;
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -37,6 +42,7 @@
 		bottom: 0;
 		padding: 1rem;
 		opacity: 1;
+		color: white;
 
 		// clip-path: polygon(100% 100%, 100% 0, 100% 100%, 100% 100%);
 		clip-path: polygon(100% 50%, 100% 50%, 100% 50%, 100% 50%);

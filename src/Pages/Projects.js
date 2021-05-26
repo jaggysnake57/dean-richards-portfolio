@@ -17,8 +17,10 @@ import ProjectCard from '../Components/ProjectCard';
 import AdminPanel from '../Components/AdminPanel';
 
 const Projects = ({ setCurrentPage, currentPage }) => {
-	const [{ isAdmin, userId, projects }, dispatch] = useStateValue();
+	const [{ isAdmin, userId, projects, featuredProject }, dispatch] =
+		useStateValue();
 	const [openId, setOpenId] = useState('');
+	const [editableProjectId, setEditableProjectId] = useState('');
 
 	const handleToggleDetails = (id) => {
 		// set state id
@@ -33,34 +35,34 @@ const Projects = ({ setCurrentPage, currentPage }) => {
 		setCurrentPage('projects');
 	}, []);
 
+	const getProjects = async () => {
+		try {
+			const data = await db.collection('projects').get();
+			let projects = [];
+			data.docs.map((project) => {
+				if (!project.data().featured) {
+					projects.push({
+						...project.data(),
+						id: project.id,
+					});
+				} else {
+					dispatch({
+						type: 'SET_FEATURED',
+						project: project.data(),
+					});
+				}
+			});
+			dispatch({
+				type: 'SET_PROJECTS',
+				projects,
+			});
+		} catch (error) {
+			//handel the errors
+			console.log('projects error', error);
+		}
+	};
+
 	useEffect(() => {
-		const getProjects = async () => {
-			try {
-				// get all products
-				const data = await db.collection('projects').get();
-				let projects = [];
-				data.docs.map((project) => {
-					if (!project.data().featured) {
-						projects.push(project.data());
-					} else {
-						dispatch({
-							type: 'SET_FEATURED',
-							project: project.data(),
-						});
-					}
-				});
-
-				// add to state
-				dispatch({
-					type: 'SET_PROJECTS',
-					projects,
-				});
-			} catch (error) {
-				//handel the errors
-				console.log('projects error', error);
-			}
-		};
-
 		getProjects();
 	}, []);
 
@@ -70,30 +72,32 @@ const Projects = ({ setCurrentPage, currentPage }) => {
 				<p>PROJECTS</p>
 			</div>
 			<div className="container">
-				<AdminPanel />
+				<AdminPanel
+					editableProjectId={editableProjectId}
+					setEditableProjectId={setEditableProjectId}
+					getProjects={getProjects}
+				/>
 				<section className="hero">
 					<div
 						className="hero__image"
 						style={{
-							backgroundImage:
-								'url(https://imgur.com/CB3ofoh.png)',
+							backgroundImage: `url(${featuredProject.imageUrl})`,
 						}}></div>
 
 					<div className="hero__mask"></div>
 
 					<div className="hero__content">
-						<h1 className="hero__title">Manage landing</h1>
-						<p className="hero__blurb">
-							Lorem ipsum dolor sit amet, consectetur adipiscing
-							elit. Quisque viverra lobortis felis a commodo.
-							Aliquam a commodo ante. Cras id ultrices nunc, in
-							laoreet metus. Aenean vel purus a ante.
-						</p>
+						<h1 className="hero__title">{featuredProject.name}</h1>
+						<p className="hero__blurb">{featuredProject.blurb}</p>
 						<div className="hero__linksContainer">
-							<a href="#" className="hero__link button-link">
+							<a
+								href={featuredProject.websiteLink}
+								className="hero__link button-link">
 								Visit the site <FiExternalLink />
 							</a>
-							<a href="#" className="hero__link button-link">
+							<a
+								href={featuredProject.gitHubLink}
+								className="hero__link button-link">
 								See the code <FiGithub />
 							</a>
 						</div>
@@ -101,41 +105,17 @@ const Projects = ({ setCurrentPage, currentPage }) => {
 				</section>
 
 				<section className="projects-main">
-					<ProjectCard
-						openId={openId}
-						handleToggleDetails={handleToggleDetails}
-						projectId={1}
-					/>
-					<ProjectCard
-						openId={openId}
-						handleToggleDetails={handleToggleDetails}
-						projectId={2}
-					/>
-					<ProjectCard
-						openId={openId}
-						handleToggleDetails={handleToggleDetails}
-						projectId={3}
-					/>
-					<ProjectCard
-						openId={openId}
-						handleToggleDetails={handleToggleDetails}
-						projectId={4}
-					/>
-					<ProjectCard
-						openId={openId}
-						handleToggleDetails={handleToggleDetails}
-						projectId={5}
-					/>
-					<ProjectCard
-						openId={openId}
-						handleToggleDetails={handleToggleDetails}
-						projectId={6}
-					/>
-					<ProjectCard
-						openId={openId}
-						handleToggleDetails={handleToggleDetails}
-						projectId={7}
-					/>
+					{projects.map((project) => (
+						<ProjectCard
+							openId={openId}
+							handleToggleDetails={handleToggleDetails}
+							key={project.id}
+							projectId={project.id}
+							project={project}
+							setEditableProjectId={setEditableProjectId}
+							getProjects={getProjects}
+						/>
+					))}
 				</section>
 			</div>
 		</div>

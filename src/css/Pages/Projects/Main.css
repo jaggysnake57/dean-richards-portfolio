@@ -32,11 +32,11 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(270deg, white 0%, #fefefe 50%, rgba(252, 252, 252, 0) 60%);
+  background: linear-gradient(230deg, white 0%, rgba(255, 255, 255, 0.9) 40%, rgba(255, 255, 255, 0) 90%);
 }
 @media (max-width: 63rem) {
   .hero__mask {
-    background: linear-gradient(0deg, white 0%, #fefefe 50%, rgba(252, 252, 252, 0) 100%);
+    background: linear-gradient(0deg, white 0%, white 50%, rgba(255, 255, 255, 0) 100%);
   }
 }
 @media (max-width: 43rem) {
@@ -137,7 +137,7 @@
   display: grid;
   align-items: center;
   grid-template-columns: repeat(auto-fit, minmax(485px, 1fr));
-  gap: 0.5rem;
+  gap: 2rem;
 }
 @media (max-width: 43rem) {
   .projects-main {
