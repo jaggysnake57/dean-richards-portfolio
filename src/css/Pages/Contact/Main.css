@@ -27,6 +27,7 @@
   background-color: #007acc;
   display: block;
   border: none;
+  color: white;
 }
 .contact .contactFormContainer {
   flex: 1;
@@ -64,6 +65,7 @@
   background-color: #007acc;
   display: block;
   border: none;
+  color: white;
 }
 
 .social {

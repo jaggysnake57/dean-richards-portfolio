@@ -86,13 +86,14 @@
   align-items: center;
   cursor: pointer;
   z-index: 3;
-  transition: bottom 500ms;
 }
 .project-card__show-details:hover {
   opacity: 0.5;
 }
 .project-card .details-open {
+  transition: bottom 300ms 300ms, background-color 300ms 300ms;
   bottom: 90%;
+  background-color: red;
 }
 .project-card .details-open + .project-card__details {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);

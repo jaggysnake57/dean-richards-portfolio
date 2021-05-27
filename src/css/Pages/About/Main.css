@@ -1,16 +1,22 @@
-.about {
-  min-height: 98vh;
-}
 .about h1 {
   color: white;
-  font-size: 2rem;
-  margin-top: 10rem;
-  margin-bottom: 4rem;
+  font-size: clamp(1.5rem, 5vw, 4rem);
+  margin-top: 5vw;
+  margin-bottom: clamp(2rem, 5vw, 4rem);
 }
 .about .container p {
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2vw, 1.5rem);
   color: white;
-  width: 70%;
+  width: 100%;
+  max-width: 80rem;
   line-height: 2rem;
   margin-bottom: 2rem;
+}
+@media (max-width: 55rem) {
+  .about .container p {
+    line-height: 1.6rem;
+  }
+}
+.about .container p a {
+  color: #007acc;
 }
