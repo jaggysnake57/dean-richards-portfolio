@@ -1,5 +1,11 @@
+// react
 import React, { useEffect, useState } from 'react';
+
+// 3rd party
 import emailjs from 'emailjs-com';
+import { TwitterTweetEmbed } from 'react-twitter-embed';
+
+// icons
 import {
 	RiFacebookCircleLine,
 	RiMessengerLine,
@@ -7,18 +13,18 @@ import {
 	RiTwitterLine,
 } from 'react-icons/ri';
 
-import { TwitterTweetEmbed } from 'react-twitter-embed';
-
 //css
 import '../css/Pages/Contact/Main.css';
 import '../css/Pages/Contact/Responsive.css';
 
 const Contact = ({ setCurrentPage, openTag, closeTag }) => {
+	//state
 	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
 	const [message, setMessage] = useState('');
 	const [modalMessage, setModalMessage] = useState('');
 
+	//functions
 	const sendEmail = (e) => {
 		e.preventDefault();
 		emailjs
@@ -53,6 +59,7 @@ const Contact = ({ setCurrentPage, openTag, closeTag }) => {
 			);
 	};
 
+	//effects
 	useEffect(() => {
 		setCurrentPage('contact');
 	}, []);

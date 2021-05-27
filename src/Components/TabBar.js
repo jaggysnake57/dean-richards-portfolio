@@ -1,8 +1,7 @@
+//react
 import React, { useEffect, useState } from 'react';
 
-import '../css/Components/TabBar/Main.css';
-import '../css/Components/TabBar/Responsive.css';
-
+// icons
 import { BsCollection } from 'react-icons/bs';
 import {
 	RiUser3Line,
@@ -10,11 +9,16 @@ import {
 	RiMailSendLine,
 	RiCloseLine,
 } from 'react-icons/ri';
-import { Link } from 'react-router-dom';
+
+//css
+import '../css/Components/TabBar/Main.css';
+import '../css/Components/TabBar/Responsive.css';
 
 const TabBar = ({ currentPage, projectName, setProjectName }) => {
+	//state
 	const [projectNames, setProjectNames] = useState([]);
 
+	// variables
 	const icons = {
 		home: RiHomeLine,
 		about: RiUser3Line,
@@ -22,6 +26,22 @@ const TabBar = ({ currentPage, projectName, setProjectName }) => {
 		contact: RiMailSendLine,
 	};
 
+	const TabIcon = icons[currentPage];
+
+	//functions
+	const closeTab = (tabName) => {
+		const remainingTabs = projectNames.filter((name) => {
+			if (name !== tabName) {
+				return name;
+			} else {
+				return '';
+			}
+		});
+
+		setProjectNames(remainingTabs);
+	};
+
+	//effects
 	useEffect(() => {
 		if (currentPage === 'projects') {
 			if (!projectNames.includes(projectName) && projectName !== '') {
@@ -45,19 +65,6 @@ const TabBar = ({ currentPage, projectName, setProjectName }) => {
 		}
 	}, [projectNames, currentPage]);
 
-	const closeTab = (tabName) => {
-		const remainingTabs = projectNames.filter((name) => {
-			if (name !== tabName) {
-				return name;
-			} else {
-				return '';
-			}
-		});
-
-		setProjectNames(remainingTabs);
-	};
-
-	const TabIcon = icons[currentPage];
 	return (
 		<div
 			className={

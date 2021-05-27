@@ -1,27 +1,31 @@
 //react
 import { useEffect, useState } from 'react';
+import { useStateValue } from '../contexts/ProjectsContext';
 
 //firebase
 import { db } from '../firebase';
 
+// components
+import ProjectCard from '../Components/ProjectCard';
+import AdminPanel from '../Components/AdminPanel';
+
 //icons
 import { FiExternalLink, FiGithub } from 'react-icons/fi';
-import { BsBoxArrowLeft } from 'react-icons/bs';
-import { RiCloseFill } from 'react-icons/ri';
 
 //css
 import '../css/Pages/Projects/Main.css';
 import '../css/Pages/Projects/Responsive.css';
-import { useStateValue } from '../contexts/ProjectsContext';
-import ProjectCard from '../Components/ProjectCard';
-import AdminPanel from '../Components/AdminPanel';
 
 const Projects = ({ setCurrentPage, currentPage }) => {
+	//context
 	const [{ isAdmin, userId, projects, featuredProject }, dispatch] =
 		useStateValue();
+
+	// state
 	const [openId, setOpenId] = useState('');
 	const [editableProjectId, setEditableProjectId] = useState('');
 
+	// functions
 	const handleToggleDetails = (id) => {
 		// set state id
 		if (openId === id) {
@@ -30,10 +34,6 @@ const Projects = ({ setCurrentPage, currentPage }) => {
 			setOpenId(id);
 		}
 	};
-
-	useEffect(() => {
-		setCurrentPage('projects');
-	}, []);
 
 	const getProjects = async () => {
 		try {
@@ -62,6 +62,11 @@ const Projects = ({ setCurrentPage, currentPage }) => {
 		}
 	};
 
+	//use effects
+	useEffect(() => {
+		setCurrentPage('projects');
+	}, []);
+
 	useEffect(() => {
 		getProjects();
 	}, []);
@@ -72,11 +77,13 @@ const Projects = ({ setCurrentPage, currentPage }) => {
 				<p>PROJECTS</p>
 			</div>
 			<div className="container">
-				<AdminPanel
-					editableProjectId={editableProjectId}
-					setEditableProjectId={setEditableProjectId}
-					getProjects={getProjects}
-				/>
+				{isAdmin && userId && (
+					<AdminPanel
+						editableProjectId={editableProjectId}
+						setEditableProjectId={setEditableProjectId}
+						getProjects={getProjects}
+					/>
+				)}
 				<section className="hero">
 					<div
 						className="hero__image"

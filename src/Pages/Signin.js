@@ -1,17 +1,24 @@
+// react
 import { useState } from 'react';
 import { useHistory } from 'react-router';
+
+// database
 import { auth } from '../firebase';
+
+//css
 import '../css/Pages/Signin/Main.css';
 
 const Signin = () => {
-	const history = useHistory();
-
+	//state
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 
+	// hooks
+	const history = useHistory();
+
+	// functions
 	const login = async (e) => {
 		e.preventDefault();
-
 		try {
 			await auth.signInWithEmailAndPassword(email, password);
 			history.push('/');

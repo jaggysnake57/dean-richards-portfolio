@@ -1,10 +1,19 @@
+// react
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './css/index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+
+// contexts
 import { ProjectsContextProvider } from './contexts/ProjectsContext';
 import reducer, { initialState } from './contexts/reducer';
+
+// 3rd party
+import reportWebVitals from './reportWebVitals';
+
+// components
+import App from './App';
+
+// css
+import './css/index.css';
 
 ReactDOM.render(
 	<React.StrictMode>

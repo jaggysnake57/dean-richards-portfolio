@@ -1,11 +1,11 @@
+import { useStateValue } from '../contexts/ProjectsContext';
+import { db } from '../firebase';
+
 import { FiExternalLink, FiGithub } from 'react-icons/fi';
 import { BsBoxArrowLeft } from 'react-icons/bs';
 import { RiCloseFill } from 'react-icons/ri';
 
 import '../css/Components/ProjectCard/Main.css';
-import { useStateValue } from '../contexts/ProjectsContext';
-import { useEffect } from 'react';
-import { db } from '../firebase';
 
 const ProjectCard = ({
 	openId,
@@ -15,19 +15,22 @@ const ProjectCard = ({
 	setEditableProjectId,
 	getProjects,
 }) => {
+	//context
 	const [{ isAdmin, userId }, dispatch] = useStateValue();
+
+	// destructed props
 	const { name, imageUrl, websiteLink, gitHubLink, blurb } = project;
 
+	// functions
 	const handleDeleteProject = (id, event) => {
 		event.preventDefault();
-
 		const conformation = window.confirm('are you sure');
 		if (conformation) {
 			try {
 				db.collection('projects').doc(id).delete();
 				getProjects();
 			} catch (error) {
-				console.log(error);
+				console.error(error);
 			}
 		}
 	};
@@ -36,9 +39,8 @@ const ProjectCard = ({
 		<div className="project-card">
 			<div
 				className="project-card__image"
-				style={{ backgroundImage: `url(${imageUrl})` }}>
-				{/* <img src={imageUrl} alt="" /> */}
-			</div>
+				style={{ backgroundImage: `url(${imageUrl})` }}
+			/>
 
 			{isAdmin && userId && (
 				<div className="project-card__admin-buttons">
@@ -54,10 +56,10 @@ const ProjectCard = ({
 					</button>
 				</div>
 			)}
-
+			{/* blue details toggler */}
 			<div
 				className={`project-card__show-details ${
-					openId === projectId ? 'details-open' : 'details-closed'
+					openId === projectId ? 'details-open' : ''
 				}`}
 				onClick={() => handleToggleDetails(projectId)}>
 				{openId === projectId ? <RiCloseFill /> : <BsBoxArrowLeft />}
@@ -69,11 +71,15 @@ const ProjectCard = ({
 				<div className="project-card__links">
 					<a
 						href={websiteLink}
+						target="_blank"
+						rel="noreferrer"
 						className="project-card__link button-link">
 						Visit the site <FiExternalLink />
 					</a>
 					<a
 						href={gitHubLink}
+						target="_blank"
+						rel="noreferrer"
 						className="project-card__link button-link">
 						See the code <FiGithub />
 					</a>

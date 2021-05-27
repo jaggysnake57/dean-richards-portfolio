@@ -1,11 +1,9 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
 // css
 import '../css/Pages/About/Main.css';
 import '../css/Pages/About/Responsive.css';
-import Carousel from '../Components/Carousel';
-
-import me from '../images/dummy.jpg';
-import { Link } from 'react-router-dom';
 
 const About = ({ setCurrentPage, currentPage }) => {
 	useEffect(() => {

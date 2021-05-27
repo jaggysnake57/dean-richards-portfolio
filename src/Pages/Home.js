@@ -1,23 +1,23 @@
+// react
 import React, { useEffect } from 'react';
-//css
-import '../css/Pages/Home/Main.css';
-import '../css/Pages/Home/Responsive.css';
+import { Link } from 'react-router-dom';
 
+// images
 import mongoIcon from '../images/MongoDB.png';
 import reactIcon from '../images/react.png';
 import expressIcon from '../images/expressIcon.png';
 import nodeIcon from '../images/node.png';
 import reduxIcon from '../images/redux.png';
-import { Link } from 'react-router-dom';
+
+//css
+import '../css/Pages/Home/Main.css';
+import '../css/Pages/Home/Responsive.css';
 
 const Home = ({ setCurrentPage }) => {
 	useEffect(() => {
 		setCurrentPage('home');
 	}, []);
-	// TODO - refactor with tag function
 
-	//! FIXME - page layout wrong -
-	//!	deanrichards tag too far over
 	return (
 		<div className="home">
 			<div className="container">

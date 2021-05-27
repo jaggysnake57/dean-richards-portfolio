@@ -1,16 +1,23 @@
 import { useEffect, useRef, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+
 import { db, storageRef } from '../firebase';
-import '../css/Components/AdminPanel/Main.css';
 import { useStateValue } from '../contexts/ProjectsContext';
+
+import '../css/Components/AdminPanel/Main.css';
 
 const AdminPanel = ({
 	editableProjectId,
 	setEditableProjectId,
 	getProjects,
 }) => {
+	// context
 	const [{ projects, featuredProject }, dispatch] = useStateValue();
 
+	// hooks
+	const filePicker = useRef();
+
+	// state
 	const [nameData, setNameData] = useState('');
 	const [projectImage, setProjectImage] = useState();
 	const [websiteLinkData, setWebsiteLinkData] = useState('');
@@ -18,8 +25,7 @@ const AdminPanel = ({
 	const [blurbData, setBlurbData] = useState('');
 	const [featured, setFeatured] = useState(false);
 
-	const filePicker = useRef();
-
+	//functions
 	const clearForm = () => {
 		setNameData('');
 		setProjectImage('');
@@ -105,6 +111,7 @@ const AdminPanel = ({
 		filePicker.current.click();
 	};
 
+	//useEffects
 	useEffect(() => {
 		if (editableProjectId) {
 			if (featuredProject.id === editableProjectId) {

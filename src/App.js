@@ -1,25 +1,29 @@
 import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { useStateValue } from './contexts/ProjectsContext';
+
+//3rd party modules
+import Helmet from 'react-helmet';
+
+//firebase
+import { auth, db } from './firebase';
+
 //components
 import Navbar from './Components/Navbar';
-import Footer from './Components/Footer';
-import Helmet from 'react-helmet';
+
 //pages
 import Home from './Pages/Home';
 import About from './Pages/About';
 import Projects from './Pages/Projects';
 import Contact from './Pages/Contact';
-//css
-import './css/App.css';
-import TabBar from './Components/TabBar';
 import NotFound from './Pages/NotFound';
 import Signin from './Pages/Signin';
-import { auth, db } from './firebase';
-import { useStateValue } from './contexts/ProjectsContext';
+
+//css
+import './css/App.css';
 
 function App() {
 	const [currentPage, setCurrentPage] = useState('home');
-	const [projectName, setProjectName] = useState('');
 
 	const [{ userId }, dispatch] = useStateValue();
 
@@ -155,8 +159,6 @@ function App() {
 					/>
 					<Route component={NotFound} />
 				</Switch>
-
-				{/* <Footer /> */}
 			</div>
 		</Router>
 	);

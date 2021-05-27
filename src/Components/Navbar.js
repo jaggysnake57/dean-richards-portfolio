@@ -1,23 +1,29 @@
 //react
 import React, { useState } from 'react';
-//icons
 import { Link, useHistory } from 'react-router-dom';
+import { useStateValue } from '../contexts/ProjectsContext';
 
-import { BsCollection } from 'react-icons/bs';
+// database
+import { auth } from '../firebase';
+
+//icons
 import { AiOutlineClose } from 'react-icons/ai';
 
 //css
 import '../css/Components/Navbar/Main.css';
 import '../css/Components/Navbar/Responsive.css';
-import { auth } from '../firebase';
-import { useStateValue } from '../contexts/ProjectsContext';
 
 const Navbar = ({ currentPage }) => {
-	const history = useHistory();
-	const [navMenuOpen, setNavMenuOpen] = useState(false);
-
+	//context
 	const [{ userId }, dispatch] = useStateValue();
 
+	//state
+	const [navMenuOpen, setNavMenuOpen] = useState(false);
+
+	//hooks
+	const history = useHistory();
+
+	//functions
 	const handleLogOut = () => {
 		auth.signOut();
 		console.log('log out clicked');

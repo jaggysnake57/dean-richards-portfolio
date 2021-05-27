@@ -43,9 +43,8 @@
 		padding: 1rem;
 		opacity: 1;
 		color: white;
-
-		// clip-path: polygon(100% 100%, 100% 0, 100% 100%, 100% 100%);
 		clip-path: polygon(100% 50%, 100% 50%, 100% 50%, 100% 50%);
+		transition: clip-path 500ms;
 	}
 
 	&__title {
@@ -104,31 +103,7 @@
 	.details-open {
 		bottom: 90%;
 		& + .project-card__details {
-			animation: showCard 500ms ease-in-out forwards;
+			clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 		}
-	}
-	.details-closed {
-		& + .project-card__details {
-			animation: hideCard 500ms ease-in-out forwards;
-		}
-	}
-}
-
-@keyframes showCard {
-	0% {
-		clip-path: polygon(100% 50%, 100% 50%, 100% 50%, 100% 50%);
-	}
-
-	100% {
-		clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-	}
-}
-@keyframes hideCard {
-	0% {
-		clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-	}
-
-	100% {
-		clip-path: polygon(100% 50%, 100% 50%, 100% 50%, 100% 50%);
 	}
 }
