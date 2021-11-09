@@ -25,6 +25,7 @@ body {
 	}
 }
 .pageBackground {
+	display: none;
 	position: fixed;
 	top: -10%;
 	right: 20%;
@@ -65,6 +66,10 @@ body {
 		margin-left: 0.5em;
 		font-size: 1.2em;
 	}
+}
+
+.btn-success {
+	background-color: $componentName;
 }
 
 @media (max-width: 1920px) {

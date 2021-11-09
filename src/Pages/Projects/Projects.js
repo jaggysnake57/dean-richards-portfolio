@@ -18,18 +18,8 @@ const Projects = ({ setCurrentPage, currentPage }) => {
 		useStateValue();
 
 	// state
-	const [openId, setOpenId] = useState('');
-	const [editableProjectId, setEditableProjectId] = useState('');
 
-	// functions
-	const handleToggleDetails = (id) => {
-		// set state id
-		if (openId === id) {
-			setOpenId('');
-		} else {
-			setOpenId(id);
-		}
-	};
+	const [editableProjectId, setEditableProjectId] = useState('');
 
 	const getProjects = async () => {
 		try {
@@ -48,6 +38,7 @@ const Projects = ({ setCurrentPage, currentPage }) => {
 					});
 				}
 			});
+			console.log(projects);
 			dispatch({
 				type: 'SET_PROJECTS',
 				projects,
@@ -77,47 +68,14 @@ const Projects = ({ setCurrentPage, currentPage }) => {
 						getProjects={getProjects}
 					/>
 				)}
-				<section className="hero">
-					<div
-						className="hero__image"
-						style={{
-							backgroundImage: `url(${featuredProject.imageUrl})`,
-						}}></div>
-
-					<div className="hero__mask"></div>
-
-					<div className="hero__content">
-						<h1 className="hero__title">{featuredProject.name}</h1>
-						<p className="hero__blurb">{featuredProject.blurb}</p>
-						<div className="hero__linksContainer">
-							<a
-								href={featuredProject.websiteLink}
-								className="hero__link button-link">
-								Visit the site <FiExternalLink />
-							</a>
-							<a
-								href={featuredProject.gitHubLink}
-								className="hero__link button-link">
-								See the code <FiGithub />
-							</a>
-						</div>
-					</div>
-				</section>
-
-				<section className="projects-main">
-					{projects.map((project) => (
-						<ProjectCard
-							openId={openId}
-							handleToggleDetails={handleToggleDetails}
-							key={project.id}
-							projectId={project.id}
-							project={project}
-							setEditableProjectId={setEditableProjectId}
-							getProjects={getProjects}
-						/>
-					))}
-				</section>
+				<h1>Projects</h1>
 			</div>
+
+			<section className="projects-main">
+				{projects.map((project) => (
+					<ProjectCard project={project} projectId={project.id} />
+				))}
+			</section>
 		</div>
 	);
 };

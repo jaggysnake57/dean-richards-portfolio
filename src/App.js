@@ -45,7 +45,6 @@ function App() {
 				);
 			}
 		};
-
 		auth.onAuthStateChanged((authUser) => {
 			if (authUser) {
 				dispatch({
@@ -61,7 +60,6 @@ function App() {
 				dispatch({
 					type: 'LOG_USER_OUT',
 				});
-
 				console.log('user logged out');
 			}
 		});

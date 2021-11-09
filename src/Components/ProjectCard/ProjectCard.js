@@ -33,13 +33,10 @@ const ProjectCard = ({
 		}
 	};
 
-	return (
-		<div className="project-card">
-			<div
-				className="project-card__image"
-				style={{ backgroundImage: `url(${imageUrl})` }}
-			/>
+	console.log(project);
 
+	return (
+		<div className="project project--pull-left">
 			{isAdmin && userId && (
 				<div className="project-card__admin-buttons">
 					<button
@@ -54,33 +51,47 @@ const ProjectCard = ({
 					</button>
 				</div>
 			)}
-			{/* blue details toggler */}
-			<div
-				className={`project-card__show-details ${
-					openId === projectId ? 'details-open' : ''
-				}`}
-				onClick={() => handleToggleDetails(projectId)}>
-				{openId === projectId ? <RiCloseFill /> : <BsBoxArrowLeft />}
-			</div>
-
-			<div className="project-card__details">
-				<h2 className="project-card__title">{name}</h2>
-				<p className="project-card__blurb">{blurb}</p>
-				<div className="project-card__links">
-					<a
-						href={websiteLink}
-						target="_blank"
-						rel="noreferrer"
-						className="project-card__link button-link">
-						Visit the site <FiExternalLink />
-					</a>
-					<a
-						href={gitHubLink}
-						target="_blank"
-						rel="noreferrer"
-						className="project-card__link button-link">
-						See the code <FiGithub />
-					</a>
+			<div className="project__content">
+				<div className="project__info">
+					<h2>{name}</h2>
+					<p>{blurb}</p>
+					<div className="project__buttons-wrapper">
+						<a
+							href={websiteLink}
+							className="btn btn-success"
+							target="_blank"
+							rel="noreferrer">
+							Visit the site <FiExternalLink />
+						</a>
+						<a
+							href={gitHubLink}
+							className="btn btn-success"
+							target="_blank"
+							rel="noreferrer">
+							See the code <FiGithub />
+						</a>
+						{isAdmin && userId && (
+							<div className="project-card__admin-buttons">
+								<button
+									className="btn btn-success"
+									onClick={() =>
+										setEditableProjectId(projectId)
+									}>
+									Edit
+								</button>
+								<button
+									className="btn danger"
+									onClick={(e) =>
+										handleDeleteProject(projectId, e)
+									}>
+									Delete
+								</button>
+							</div>
+						)}
+					</div>
+				</div>
+				<div className="project__image">
+					<img src={imageUrl} alt="" />
 				</div>
 			</div>
 		</div>
