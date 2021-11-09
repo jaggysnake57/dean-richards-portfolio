@@ -1,0 +1,155 @@
+@use '../../sass/abstracts/' as *;
+.contact {
+	.container {
+		display: flex;
+		padding-top: 5rem;
+	}
+	.messagePageCover {
+		width: 100vw;
+		height: 100vh;
+		position: absolute;
+		background-color: rgba(0, 0, 0, 0.7);
+		z-index: 20;
+		display: grid;
+		place-content: center;
+	}
+	.messageBox {
+		background-color: $componentName;
+		padding: 5rem;
+		font-size: 1.3rem;
+		color: white;
+		p {
+			margin-bottom: 2rem;
+		}
+		button {
+			margin-left: auto;
+			font-size: 1.3rem;
+			padding: 0.5rem 4rem;
+			background-color: $footer;
+			display: block;
+			border: none;
+			color: white;
+		}
+	}
+	.contactFormContainer {
+		flex: 1;
+		padding-right: 1rem;
+		h1 {
+			font-size: 2rem;
+			color: $componentName;
+			margin-bottom: 4rem;
+		}
+	}
+	.inputGroup {
+		margin-bottom: 3rem;
+		p {
+			font-size: 1.5rem;
+			color: $componentName;
+		}
+		input,
+		textarea {
+			width: 100%;
+			font-size: 1.5rem;
+			padding: 1rem;
+			border-radius: 5px;
+			border: none;
+			background-color: $defaultIcon;
+		}
+		textarea {
+			height: 400px;
+			resize: none;
+		}
+		button {
+			margin-left: auto;
+			font-size: 1.4rem;
+			padding: 0.5rem 4rem;
+			background-color: $footer;
+			display: block;
+			border: none;
+			color: white;
+		}
+	}
+}
+
+.social {
+	flex: 1;
+	padding-left: 1rem;
+	div:first-of-type {
+		display: flex;
+		justify-content: center;
+	}
+	iframe {
+		width: 100% !important;
+	}
+	.twitterBlock {
+		margin-bottom: 3rem;
+		display: flex;
+		justify-content: center;
+		iframe {
+			background-color: $tabBar;
+		}
+	}
+	h3 {
+		font-size: 1.3rem;
+		color: white;
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+	.socialIcons {
+		// background-color: blue;
+		font-size: 5rem;
+		width: 50%;
+		margin: auto;
+		display: flex;
+		justify-content: space-between;
+		a {
+			color: white;
+			&:hover {
+				color: $componentName;
+			}
+		}
+	}
+}
+
+@media (max-width: 1024px) {
+	.contact {
+		.container {
+			display: block;
+		}
+	}
+	.social {
+		.twitterBlock {
+			display: none;
+		}
+	}
+}
+
+@media screen and (max-width: 550px) {
+	.contact {
+		width: 100%;
+		.container {
+			padding-top: 1rem;
+		}
+		h1 {
+			text-align: center;
+			font-size: 1.5rem;
+		}
+		.inputGroup {
+			button {
+				width: 100%;
+				margin-left: none;
+			}
+		}
+		.social {
+			padding-left: 0;
+			h3 {
+				margin-bottom: 0.5rem;
+			}
+		}
+		.socialIcons {
+			font-size: 3rem;
+			margin-bottom: 4rem;
+			width: 100%;
+		}
+	}
+}

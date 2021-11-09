@@ -1,0 +1,116 @@
+@use '../../sass/abstracts/' as *;
+.home {
+	height: 100vh;
+	font-size: 4.2rem;
+	padding-top: 80px;
+	font-family: 'Inconsolata', monospace;
+	img {
+		object-fit: contain;
+		height: 4rem;
+	}
+}
+.tag-fragment {
+	color: $tagBrackets;
+}
+.component {
+	color: $componentName;
+}
+.attribute {
+	color: $componentAttr;
+}
+.bracket-1 {
+	color: $bracketsColor1;
+}
+.bracket-2 {
+	color: $bracketsColor2;
+}
+.bracket-3 {
+	color: $bracketsColor3;
+}
+.tab {
+	padding-left: 108px;
+	border-left: 1px solid darkgrey;
+}
+
+.object {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	width: 600px;
+	align-items: center;
+	img {
+		justify-self: center;
+	}
+}
+.bool {
+	color: $jsxTag;
+}
+.function {
+	color: $function;
+}
+.cursor {
+	animation: cursorFlash 0.5s linear infinite alternate;
+	color: white;
+}
+
+@keyframes cursorFlash {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+@media (max-width: 1920px) {
+	.home {
+		font-size: 3rem;
+		.tab {
+			padding-left: 75px;
+		}
+		img {
+			height: 2.3rem;
+		}
+		.object {
+			width: 400px;
+		}
+	}
+}
+
+@media (max-width: 1024px) {
+	.home {
+		font-size: 2rem;
+		.tab {
+			padding-left: 50px;
+		}
+		img {
+			height: 1.8rem;
+		}
+		.object {
+			width: 300px;
+		}
+	}
+}
+
+@media (max-width: 800px) {
+	.home {
+		// font-size: 1.5rem;
+	}
+}
+
+@media screen and (max-width: 550px) {
+	.home {
+		font-size: 1.2rem;
+
+		margin-top: 0;
+		padding-left: 0;
+		padding-top: 50px;
+		img {
+			height: 1rem;
+		}
+		.tab {
+			padding-left: 20px;
+		}
+		.object {
+			width: 200px;
+		}
+	}
+}

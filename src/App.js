@@ -9,18 +9,15 @@ import Helmet from 'react-helmet';
 import { auth, db } from './firebase';
 
 //components
-import Navbar from './Components/Navbar';
+import Navbar from './Components/Navbar/Navbar';
 
 //pages
-import Home from './Pages/Home';
-import About from './Pages/About';
-import Projects from './Pages/Projects';
-import Contact from './Pages/Contact';
-import NotFound from './Pages/NotFound';
-import Signin from './Pages/Signin';
-
-//css
-import './css/App.css';
+import Home from './Pages/Home/Home';
+import About from './Pages/About/About';
+import Projects from './Pages/Projects/Projects';
+import Contact from './Pages/Contact/Contact';
+import NotFound from './Pages/NotFound/NotFound';
+import Signin from './Pages/SignIn/Signin';
 
 function App() {
 	const [currentPage, setCurrentPage] = useState('home');
