@@ -21,19 +21,12 @@ const Navbar = ({ currentPage }) => {
 	const [navMenuOpen, setNavMenuOpen] = useState(false);
 
 	//hooks
-	const history = useHistory();
 
 	//functions
 	const handleLogOut = () => {
 		auth.signOut();
 		console.log('log out clicked');
 	};
-
-	history.listen(() => {
-		if (navMenuOpen) {
-			setNavMenuOpen(false);
-		}
-	});
 
 	return (
 		<div className="navbar">

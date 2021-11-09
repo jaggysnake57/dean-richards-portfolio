@@ -27,25 +27,6 @@ function App() {
 
 	const [{ userId }, dispatch] = useStateValue();
 
-	const openTag = (tagName) => {
-		return (
-			<>
-				<span className="tag-fragment">{'<'}</span>
-				<span className="bool">{tagName}</span>
-				<span className="tag-fragment">{'>'}</span>
-			</>
-		);
-	};
-	const closeTag = (tagName) => {
-		return (
-			<>
-				<span className="tag-fragment">{'<'}</span>
-				<span className="bool">{tagName}</span>
-				<span className="tag-fragment">{'/>'}</span>
-			</>
-		);
-	};
-
 	useEffect(() => {
 		const isAdmin = async (uid) => {
 			try {
@@ -91,75 +72,20 @@ function App() {
 
 	return (
 		<Router>
-			<div className="App">
-				<Navbar currentPage={currentPage} />
-
-				{/* navbar side */}
-
-				<div className="siteBackground">
-					<p>Dean Richards</p>
-				</div>
-				<Helmet>
-					<title>
-						Dean Richards |{' '}
-						{currentPage.charAt(0).toUpperCase() +
-							currentPage.slice(1)}
-					</title>
-				</Helmet>
-				<Switch>
-					{/* home */}
-					<Route
-						exact
-						path="/"
-						render={(props) => (
-							<Home {...props} setCurrentPage={setCurrentPage} />
-						)}
-					/>
-					{/* about */}
-					<Route
-						exact
-						path="/about"
-						render={(props) => (
-							<About
-								{...props}
-								setCurrentPage={setCurrentPage}
-								currentPage={currentPage}
-							/>
-						)}
-					/>
-					{/* projects */}
-					<Route
-						exact
-						path="/projects"
-						render={(props) => (
-							<Projects
-								{...props}
-								setCurrentPage={setCurrentPage}
-								currentPage={currentPage}
-							/>
-						)}
-					/>
-					{/* contact */}
-					<Route
-						exact
-						path="/contact"
-						render={(props) => (
-							<Contact
-								{...props}
-								setCurrentPage={setCurrentPage}
-								openTag={openTag}
-								closeTag={closeTag}
-							/>
-						)}
-					/>
-					<Route
-						exact
-						path="/signin"
-						render={(props) => <Signin {...props} />}
-					/>
-					<Route component={NotFound} />
-				</Switch>
+			<Navbar currentPage={currentPage} />
+			<div className="siteBackground">
+				<p>Dean Richards</p>
 			</div>
+			<Helmet>
+				<title>
+					Dean Richards |{' '}
+					{currentPage.charAt(0).toUpperCase() + currentPage.slice(1)}
+				</title>
+			</Helmet>
+			<Home />
+			<About />
+			<Projects />
+			<Contact />
 		</Router>
 	);
 }
