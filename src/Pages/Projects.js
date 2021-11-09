@@ -63,9 +63,6 @@ const Projects = ({ setCurrentPage, currentPage }) => {
 	};
 
 	//use effects
-	useEffect(() => {
-		setCurrentPage('projects');
-	}, []);
 
 	useEffect(() => {
 		getProjects();

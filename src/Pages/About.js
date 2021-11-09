@@ -6,10 +6,6 @@ import '../css/Pages/About/Main.css';
 import '../css/Pages/About/Responsive.css';
 
 const About = ({ setCurrentPage, currentPage }) => {
-	useEffect(() => {
-		setCurrentPage('about');
-	}, []);
-
 	return (
 		<div className="about">
 			<div className="pageBackground">

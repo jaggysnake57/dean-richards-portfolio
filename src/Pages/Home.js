@@ -13,11 +13,7 @@ import reduxIcon from '../images/redux.png';
 import '../css/Pages/Home/Main.css';
 import '../css/Pages/Home/Responsive.css';
 
-const Home = ({ setCurrentPage }) => {
-	useEffect(() => {
-		setCurrentPage('home');
-	}, []);
-
+const Home = () => {
 	return (
 		<div className="home">
 			<div className="container">

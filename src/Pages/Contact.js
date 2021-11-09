@@ -60,9 +60,6 @@ const Contact = ({ setCurrentPage, openTag, closeTag }) => {
 	};
 
 	//effects
-	useEffect(() => {
-		setCurrentPage('contact');
-	}, []);
 
 	return (
 		<div className="contact">
