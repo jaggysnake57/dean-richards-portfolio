@@ -70,12 +70,17 @@ const Projects = ({ setCurrentPage, currentPage }) => {
 				)}
 				<h1>Projects</h1>
 			</div>
-
-			<section className="projects-main">
-				{projects.map((project) => (
-					<ProjectCard project={project} projectId={project.id} />
-				))}
-			</section>
+			<div className="large-container">
+				<section className="projects-main">
+					{projects.map((project, i) => (
+						<ProjectCard
+							project={project}
+							projectId={project.id}
+							isLeft={i % 2 === 0 ? true : false}
+						/>
+					))}
+				</section>
+			</div>
 		</div>
 	);
 };

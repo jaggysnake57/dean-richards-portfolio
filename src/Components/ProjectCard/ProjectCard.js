@@ -6,8 +6,7 @@ import { BsBoxArrowLeft } from 'react-icons/bs';
 import { RiCloseFill } from 'react-icons/ri';
 
 const ProjectCard = ({
-	openId,
-	handleToggleDetails,
+	isLeft,
 	projectId,
 	project,
 	setEditableProjectId,
@@ -33,10 +32,8 @@ const ProjectCard = ({
 		}
 	};
 
-	console.log(project);
-
 	return (
-		<div className="project project--pull-left">
+		<div className={`project project--pull-${isLeft ? 'left' : 'right'} `}>
 			{isAdmin && userId && (
 				<div className="project-card__admin-buttons">
 					<button

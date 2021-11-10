@@ -17,13 +17,15 @@ body {
 }
 
 .container {
-	width: 80%;
-	margin: 0 auto;
-	max-width: 1920px;
-	@media (max-width: 42rem) {
-		width: 94%;
+	@include container;
+}
+
+.large-container {
+	@media (min-width: 2400px) {
+		@include container;
 	}
 }
+
 .pageBackground {
 	display: none;
 	position: fixed;
