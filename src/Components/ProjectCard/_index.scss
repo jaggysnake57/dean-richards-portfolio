@@ -1,19 +1,26 @@
 @use '../../sass/abstracts/' as *;
 
-.project-card {
+.project {
+	background-color: $footer;
+	border-radius: 50px;
+	padding: 2rem 0;
+	margin-bottom: 4rem;
 	position: relative;
-	overflow: hidden;
 
-	&__image {
-		width: 100%;
+	@media (min-width: 2400px) {
+		right: 56.2%;
+		width: 3000px;
+	}
 
-		padding-top: 56.25%;
-		background-position: center top;
-		background-size: cover;
-		background-repeat: no-repeat;
-		img {
-			max-width: 100%;
-		}
+	@include mq(medium) {
+		padding: 2rem;
+	}
+
+	&__content {
+		display: flex;
+		width: 79.8%;
+		position: relative;
+		max-width: 1920px;
 	}
 
 	&__admin-buttons {
@@ -33,78 +40,95 @@
 		}
 	}
 
-	&__details {
-		background-color: $inactiveTab;
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		padding: 1rem;
-		opacity: 1;
+	&__info {
+		flex: 6 1;
+
+		& > * + * {
+			margin-top: 2rem;
+		}
 		color: white;
-		clip-path: polygon(100% 50%, 100% 50%, 100% 50%, 100% 50%);
-		transition: clip-path 500ms;
-	}
-
-	&__title {
-		font-size: 2em;
-		margin-bottom: 1rem;
-		margin-top: 1vw;
-		@media (max-width: 43rem) {
-			font-size: clamp(1.1em, 4vw, 1.7em);
+		h2 {
+			font-size: 3em;
+		}
+		p {
+			font-size: 1.1em;
+			line-height: 1.5em;
 		}
 	}
 
-	&__links {
+	&__image {
+		flex: 4 1;
+		margin: 0 2rem;
+		@include mq(medium) {
+			margin: 0;
+		}
+		img {
+			max-width: 100%;
+			border-radius: 25px;
+		}
+	}
+
+	&__buttons-wrapper {
 		display: flex;
-		justify-content: space-between;
-		position: absolute;
-		bottom: 5%;
-		left: 0;
-		width: 100%;
-		padding: 0 1rem;
-	}
-
-	&__link {
-		@media (max-width: 43rem) {
-			font-size: 0.8em;
-			width: auto !important;
-			padding: 0.5rem 0.8rem !important;
+		justify-content: flex-end;
+		& > * + * {
+			margin-left: 1rem;
 		}
 	}
 
-	&__blurb {
-		@media (max-width: 43rem) {
-			line-height: clamp(1em, 4vw, 1.5em);
-			font-size: clamp(0.9em, 4vw, 1.5em);
+	&--pull-left {
+		transform: translateX(-10%);
+		.project__content {
+			margin-left: auto;
+			@include mq(medium) {
+				flex-direction: column-reverse;
+			}
+		}
+		@media (min-width: 2400px) {
+			transform: translateX(0);
+			right: 56.2%;
+			width: 3000px;
+			.project__content {
+				width: 63.5%;
+			}
 		}
 	}
 
-	&__show-details {
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		background-color: $footer;
-		right: 0;
-		font-size: 2rem;
-		color: white;
-		padding: 0.5rem;
-		display: flex;
-		align-items: center;
-		cursor: pointer;
-		z-index: 3;
+	&--pull-right {
+		transform: translateX(10%);
 
-		&:hover {
-			opacity: 0.5;
+		.project__content {
+			margin-right: auto;
+			flex-direction: row-reverse;
+
+			@include mq(medium) {
+				flex-direction: column-reverse;
+			}
+		}
+
+		@media (min-width: 2400px) {
+			transform: translateX(0);
+			left: 0%;
+			width: 3000px;
+			.project__content {
+				width: 63.5%;
+			}
 		}
 	}
-	.details-open {
-		transition: bottom 300ms 300ms, background-color 300ms 300ms;
-		bottom: 90%;
-		background-color: red;
-		& + .project-card__details {
-			clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+@include mq(small) {
+	.project--pull-left,
+	.project--pull-right {
+		transform: translateX(0);
+		width: 94%;
+		margin-left: auto;
+		margin-right: auto;
+
+		.project__content {
+			margin: 0;
+			width: 100%;
+			text-align: center;
 		}
 	}
 }

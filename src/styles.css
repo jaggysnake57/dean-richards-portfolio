@@ -446,123 +446,12 @@ body {
   font-size: 2rem;
 }
 
-.project {
-  background-color: #007acc;
-  border-radius: 50px;
-  padding: 2rem 0;
-  margin-bottom: 4rem;
-  position: relative;
-}
-@media (min-width: 2400px) {
-  .project {
-    right: 56.2%;
-    width: 3000px;
-  }
-}
-@media (max-width: 63em) {
-  .project {
-    padding: 2rem;
-  }
-}
-.project__content {
-  display: flex;
-  width: 79.8%;
-  position: relative;
-  max-width: 1920px;
-}
-.project__info {
-  flex: 6 1;
-  color: white;
-}
-.project__info > * + * {
-  margin-top: 2rem;
-}
-.project__info h2 {
+.projects h1 {
   font-size: 3em;
-}
-.project__info p {
-  font-size: 1.1em;
-  line-height: 1.5em;
-}
-.project__image {
-  flex: 4 1;
-  margin: 0 2rem;
-}
-@media (max-width: 63em) {
-  .project__image {
-    margin: 0;
-  }
-}
-.project__image img {
-  max-width: 100%;
-  border-radius: 25px;
-}
-.project__buttons-wrapper {
-  display: flex;
-  justify-content: flex-end;
-}
-.project__buttons-wrapper > * + * {
-  margin-left: 1rem;
-}
-.project--pull-left {
-  transform: translateX(-10%);
-}
-.project--pull-left .project__content {
-  margin-left: auto;
-}
-@media (max-width: 63em) {
-  .project--pull-left .project__content {
-    flex-direction: column-reverse;
-  }
-}
-@media (min-width: 2400px) {
-  .project--pull-left {
-    transform: translateX(0);
-    right: 56.2%;
-    width: 3000px;
-  }
-  .project--pull-left .project__content {
-    width: 63.5%;
-  }
-}
-.project--pull-right {
-  transform: translateX(10%);
-}
-.project--pull-right .project__content {
-  margin-right: auto;
-  flex-direction: row-reverse;
-}
-@media (max-width: 63em) {
-  .project--pull-right .project__content {
-    flex-direction: column-reverse;
-  }
-}
-@media (min-width: 2400px) {
-  .project--pull-right {
-    transform: translateX(0);
-    left: 0%;
-    width: 3000px;
-  }
-  .project--pull-right .project__content {
-    width: 63.5%;
-  }
+  color: white;
+  margin-bottom: 5rem;
 }
 
-@media (max-width: 40em) {
-  .project--pull-left,
-.project--pull-right {
-    transform: translateX(0);
-    width: 94%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .project--pull-left .project__content,
-.project--pull-right .project__content {
-    margin: 0;
-    width: 100%;
-    text-align: center;
-  }
-}
 .signin {
   display: grid;
   place-items: center;
@@ -789,107 +678,139 @@ body {
     font-size: 1.5rem;
   }
 }
-.project-card {
+.project {
+  background-color: #007acc;
+  border-radius: 50px;
+  padding: 2rem 0;
+  margin-bottom: 4rem;
   position: relative;
-  overflow: hidden;
 }
-.project-card__image {
-  width: 100%;
-  padding-top: 56.25%;
-  background-position: center top;
-  background-size: cover;
-  background-repeat: no-repeat;
+@media (min-width: 2400px) {
+  .project {
+    right: 56.2%;
+    width: 3000px;
+  }
 }
-.project-card__image img {
-  max-width: 100%;
+@media (max-width: 63em) {
+  .project {
+    padding: 2rem;
+  }
 }
-.project-card__admin-buttons {
+.project__content {
+  display: flex;
+  width: 79.8%;
+  position: relative;
+  max-width: 1920px;
+}
+.project__admin-buttons {
   position: absolute;
   bottom: 0;
   left: 0;
   display: flex;
 }
-.project-card__admin-buttons .btn {
+.project__admin-buttons .btn {
   cursor: pointer;
   font-family: "Poppins", sans-serif;
   width: auto;
   padding: 1rem 1.5rem;
   margin-right: 0.5rem;
 }
-.project-card__admin-buttons .danger {
+.project__admin-buttons .danger {
   background-color: #a50f0f;
 }
-.project-card__details {
-  background-color: #2d2d2d;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 1rem;
-  opacity: 1;
+.project__info {
+  flex: 6 1;
   color: white;
-  clip-path: polygon(100% 50%, 100% 50%, 100% 50%, 100% 50%);
-  transition: clip-path 500ms;
 }
-.project-card__title {
-  font-size: 2em;
-  margin-bottom: 1rem;
-  margin-top: 1vw;
+.project__info > * + * {
+  margin-top: 2rem;
 }
-@media (max-width: 43rem) {
-  .project-card__title {
-    font-size: clamp(1.1em, 4vw, 1.7em);
+.project__info h2 {
+  font-size: 3em;
+}
+.project__info p {
+  font-size: 1.1em;
+  line-height: 1.5em;
+}
+.project__image {
+  flex: 4 1;
+  margin: 0 2rem;
+}
+@media (max-width: 63em) {
+  .project__image {
+    margin: 0;
   }
 }
-.project-card__links {
+.project__image img {
+  max-width: 100%;
+  border-radius: 25px;
+}
+.project__buttons-wrapper {
   display: flex;
-  justify-content: space-between;
-  position: absolute;
-  bottom: 5%;
-  left: 0;
-  width: 100%;
-  padding: 0 1rem;
+  justify-content: flex-end;
 }
-@media (max-width: 43rem) {
-  .project-card__link {
-    font-size: 0.8em;
-    width: auto !important;
-    padding: 0.5rem 0.8rem !important;
+.project__buttons-wrapper > * + * {
+  margin-left: 1rem;
+}
+.project--pull-left {
+  transform: translateX(-10%);
+}
+.project--pull-left .project__content {
+  margin-left: auto;
+}
+@media (max-width: 63em) {
+  .project--pull-left .project__content {
+    flex-direction: column-reverse;
   }
 }
-@media (max-width: 43rem) {
-  .project-card__blurb {
-    line-height: clamp(1em, 4vw, 1.5em);
-    font-size: clamp(0.9em, 4vw, 1.5em);
+@media (min-width: 2400px) {
+  .project--pull-left {
+    transform: translateX(0);
+    right: 56.2%;
+    width: 3000px;
+  }
+  .project--pull-left .project__content {
+    width: 63.5%;
   }
 }
-.project-card__show-details {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  background-color: #007acc;
-  right: 0;
-  font-size: 2rem;
-  color: white;
-  padding: 0.5rem;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  z-index: 3;
+.project--pull-right {
+  transform: translateX(10%);
 }
-.project-card__show-details:hover {
-  opacity: 0.5;
+.project--pull-right .project__content {
+  margin-right: auto;
+  flex-direction: row-reverse;
 }
-.project-card .details-open {
-  transition: bottom 300ms 300ms, background-color 300ms 300ms;
-  bottom: 90%;
-  background-color: red;
+@media (max-width: 63em) {
+  .project--pull-right .project__content {
+    flex-direction: column-reverse;
+  }
 }
-.project-card .details-open + .project-card__details {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+@media (min-width: 2400px) {
+  .project--pull-right {
+    transform: translateX(0);
+    left: 0%;
+    width: 3000px;
+  }
+  .project--pull-right .project__content {
+    width: 63.5%;
+  }
 }
 
+@media (max-width: 40em) {
+  .project--pull-left,
+.project--pull-right {
+    transform: translateX(0);
+    width: 94%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .project--pull-left .project__content,
+.project--pull-right .project__content {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+  }
+}
 .tabBar {
   margin-left: 75px;
   position: fixed;
