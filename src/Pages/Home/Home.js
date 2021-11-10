@@ -3,10 +3,10 @@ import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 // images
-import mongoIcon from '../../images/MongoDB.png';
+import HTMLIcon from '../../images/HTML.png';
 import reactIcon from '../../images/react.png';
-import expressIcon from '../../images/expressIcon.png';
-import nodeIcon from '../../images/node.png';
+import javascriptIcon from '../../images/javascript.png';
+import sassIcon from '../../images/Sass.png';
 import reduxIcon from '../../images/redux.png';
 
 const Home = ({ setCurrentPage }) => {
@@ -48,12 +48,12 @@ const Home = ({ setCurrentPage }) => {
 							tags=<span className="bracket-2">{'{'}</span>
 						</p>
 						<div className=" attribute tab object">
-							<p>Mongo: </p>
-							<img src={mongoIcon} alt="mongo icon"></img>
-							<p>Express:</p>
-							<img src={expressIcon} alt="" />
-							<p>Node:</p>
-							<img src={nodeIcon} alt="node icon" />
+							<p>HTML 5: </p>
+							<img src={HTMLIcon} alt="mongo icon"></img>
+							<p>Sass:</p>
+							<img src={sassIcon} alt="" />
+							<p>JavaScript:</p>
+							<img src={javascriptIcon} alt="node icon" />
 							<p>React:</p>
 							<img src={reactIcon} alt="react icon" />
 							<p>Redux:</p>
