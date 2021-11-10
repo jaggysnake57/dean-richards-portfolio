@@ -1,5 +1,5 @@
 //react
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useStateValue } from '../../contexts/ProjectsContext';
 
 //firebase
@@ -38,7 +38,7 @@ const Projects = ({ setCurrentPage, currentPage }) => {
 					});
 				}
 			});
-			console.log(projects);
+
 			dispatch({
 				type: 'SET_PROJECTS',
 				projects,
@@ -49,6 +49,25 @@ const Projects = ({ setCurrentPage, currentPage }) => {
 		}
 	};
 
+	const projectsRef = useRef();
+
+	const projectsObserverOptions = {
+		rootMargin: '0px 0px 0px 0px',
+		threshold: 0.2,
+	};
+
+	const projectsObserver = new IntersectionObserver((entries, observer) => {
+		entries.forEach(({ isIntersecting, target }) => {
+			if (isIntersecting) {
+				setCurrentPage('projects');
+			}
+		});
+	}, projectsObserverOptions);
+
+	useEffect(() => {
+		projectsObserver.observe(projectsRef.current);
+	}, []);
+
 	//use effects
 
 	useEffect(() => {
@@ -56,7 +75,7 @@ const Projects = ({ setCurrentPage, currentPage }) => {
 	}, []);
 
 	return (
-		<div className="projects">
+		<div id="projects" className="projects" ref={projectsRef}>
 			<div className="pageBackground">
 				<p>PROJECTS</p>
 			</div>

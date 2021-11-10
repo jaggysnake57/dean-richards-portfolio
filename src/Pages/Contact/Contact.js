@@ -1,5 +1,5 @@
 // react
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 // 3rd party
 import emailjs from 'emailjs-com';
@@ -19,6 +19,26 @@ const Contact = ({ setCurrentPage, openTag, closeTag }) => {
 	const [email, setEmail] = useState('');
 	const [message, setMessage] = useState('');
 	const [modalMessage, setModalMessage] = useState('');
+
+	const contactRef = useRef();
+
+	const contactObserverOptions = {
+		rootMargin: '0px 0px 0px 0px',
+		threshold: 0.8,
+	};
+
+	const contactObserver = new IntersectionObserver((entries, observer) => {
+		entries.forEach(({ isIntersecting, target }) => {
+			if (isIntersecting) {
+				setCurrentPage('contact');
+				console.log(target);
+			}
+		});
+	}, contactObserverOptions);
+
+	useEffect(() => {
+		contactObserver.observe(contactRef.current);
+	}, []);
 
 	//functions
 	const sendEmail = (e) => {
@@ -58,7 +78,7 @@ const Contact = ({ setCurrentPage, openTag, closeTag }) => {
 	//effects
 
 	return (
-		<div className="contact">
+		<div id="contact" className="contact" ref={contactRef}>
 			{modalMessage && (
 				<div className="messagePageCover">
 					<div className="messageBox">
@@ -71,83 +91,85 @@ const Contact = ({ setCurrentPage, openTag, closeTag }) => {
 				<p>CONTACT</p>
 			</div>
 			<div className="container">
-				<div className="contactFormContainer">
-					<h1>Get In Touch</h1>
-					<form
-						className="contactForm"
-						onSubmit={(e) => sendEmail(e)}>
-						<div className="inputGroup">
-							<p>Name</p>
-							<input
-								type="text"
-								value={name}
-								onChange={(e) => setName(e.target.value)}
-								name="name"
-								required
-							/>
-						</div>
-						<div className="inputGroup">
-							<p>Email</p>
-							<input
-								type="email"
-								value={email}
-								onChange={(e) => setEmail(e.target.value)}
-								name="email"
-								required
-							/>
-						</div>
-						<div className="inputGroup textArea">
-							<p>Message</p>
-							<textarea
-								value={message}
-								onChange={(e) => setMessage(e.target.value)}
-								name="message"
-								required
-							/>
-						</div>
-						<div className="inputGroup">
-							<button>Send</button>
-						</div>
-					</form>
-				</div>
+				<h1>Get In Touch</h1>
+				<div className="contact__flex-wrapper">
+					<div className="contactFormContainer">
+						<form
+							className="contactForm"
+							onSubmit={(e) => sendEmail(e)}>
+							<div className="inputGroup">
+								<p>Name</p>
+								<input
+									type="text"
+									value={name}
+									onChange={(e) => setName(e.target.value)}
+									name="name"
+									required
+								/>
+							</div>
+							<div className="inputGroup">
+								<p>Email</p>
+								<input
+									type="email"
+									value={email}
+									onChange={(e) => setEmail(e.target.value)}
+									name="email"
+									required
+								/>
+							</div>
+							<div className="inputGroup textArea">
+								<p>Message</p>
+								<textarea
+									value={message}
+									onChange={(e) => setMessage(e.target.value)}
+									name="message"
+									required
+								/>
+							</div>
+							<div className="inputGroup">
+								<button>Send</button>
+							</div>
+						</form>
+					</div>
 
-				{/* social media tags */}
-				<div className="social">
-					<TwitterTweetEmbed
-						tweetId={'1376454932249853961'}
-						placeholder="loading"
-					/>
-					<h3>You can also reach me here - </h3>
+					{/* social media tags */}
+					<div className="social">
+						{/* <TwitterTweetEmbed
+							tweetId={'1376454932249853961'}
+							placeholder="loading"
+						/> */}
+						<h3>You can also reach me here - </h3>
 
-					<div className="socialIcons">
-						{/* facebook =  https://fb.me/DeanRichardsWebDev */}
-						<a
-							href="https://fb.me/DeanRichardsWebDev"
-							rel="noreferrer"
-							target="_blank">
-							<RiFacebookCircleLine />
-						</a>
-						{/* messenger = https://m.me/DeanRichardsWebDev  */}
-						<a
-							href="https://m.me/DeanRichardsWebDev"
-							rel="noreferrer"
-							target="_blank">
-							<RiMessengerLine />
-						</a>
-						{/* linked in  = www.linkedin.com/in/DeanRichardsWebDev1981*/}
-						<a
-							href="https://www.linkedin.com/in/DeanRichardsWebDev1981"
-							rel="noreferrer"
-							target="_blank">
-							<RiLinkedinBoxLine />
-						</a>
-						{/* twitter =  https://twitter.com/jaggysnake57 */}
-						<a
-							href="https://twitter.com/jaggysnake57"
-							rel="noreferrer"
-							target="_blank">
-							<RiTwitterLine />
-						</a>
+						<div className="socialIcons">
+							{/* facebook =  https://fb.me/DeanRichardsWebDev */}
+							<a
+								href="https://fb.me/DeanRichardsWebDev"
+								rel="noreferrer"
+								target="_blank">
+								<RiFacebookCircleLine />
+							</a>
+							{/* messenger = https://m.me/DeanRichardsWebDev  */}
+							<a
+								href="https://m.me/DeanRichardsWebDev"
+								rel="noreferrer"
+								target="_blank">
+								<RiMessengerLine />
+							</a>
+							{/* linked in  = www.linkedin.com/in/DeanRichardsWebDev1981*/}
+							<a
+								href="https://www.linkedin.com/in/DeanRichardsWebDev1981"
+								rel="noreferrer"
+								target="_blank">
+								<RiLinkedinBoxLine />
+							</a>
+							{/* twitter =  https://twitter.com/jaggysnake57 */}
+							<a
+								href="https://twitter.com/jaggysnake57"
+								rel="noreferrer"
+								target="_blank">
+								<RiTwitterLine />
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>

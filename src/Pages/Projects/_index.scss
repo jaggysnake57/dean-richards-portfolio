@@ -1,8 +1,10 @@
 @use '../../sass/abstracts/' as *;
 
 .projects {
+	margin-bottom: 20rem;
+	padding-top: 5rem;
 	h1 {
-		font-size: 3em;
+		font-size: clamp(1.5rem, 5vw, 4rem);
 		color: white;
 		margin-bottom: 5rem;
 	}

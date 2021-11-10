@@ -142,10 +142,13 @@ body {
     display: none;
   }
 }
+.about {
+  margin-bottom: 20rem;
+  padding-top: 5rem;
+}
 .about h1 {
   color: white;
   font-size: clamp(1.5rem, 5vw, 4rem);
-  margin-top: 5vw;
   margin-bottom: clamp(2rem, 5vw, 4rem);
 }
 .about .container p {
@@ -165,9 +168,16 @@ body {
   color: #007acc;
 }
 
-.contact .container {
-  display: flex;
+.contact {
   padding-top: 5rem;
+}
+.contact h1 {
+  font-size: clamp(1.5rem, 5vw, 4rem);
+  color: white;
+  margin-bottom: 4rem;
+}
+.contact__flex-wrapper {
+  display: flex;
 }
 .contact .messagePageCover {
   width: 100vw;
@@ -199,11 +209,6 @@ body {
 .contact .contactFormContainer {
   flex: 1;
   padding-right: 1rem;
-}
-.contact .contactFormContainer h1 {
-  font-size: 2rem;
-  color: #4ebc7c;
-  margin-bottom: 4rem;
 }
 .contact .inputGroup {
   margin-bottom: 3rem;
@@ -446,8 +451,12 @@ body {
   font-size: 2rem;
 }
 
+.projects {
+  margin-bottom: 20rem;
+  padding-top: 5rem;
+}
 .projects h1 {
-  font-size: 3em;
+  font-size: clamp(1.5rem, 5vw, 4rem);
   color: white;
   margin-bottom: 5rem;
 }
@@ -549,7 +558,9 @@ body {
 .navbar {
   background-color: #252526;
   padding: 5px 0;
-  position: relative;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
 }
 .navbar .container {
   display: flex;

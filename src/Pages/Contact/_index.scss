@@ -1,8 +1,13 @@
 @use '../../sass/abstracts/' as *;
 .contact {
-	.container {
+	h1 {
+		font-size: clamp(1.5rem, 5vw, 4rem);
+		color: white;
+		margin-bottom: 4rem;
+	}
+	padding-top: 5rem;
+	&__flex-wrapper {
 		display: flex;
-		padding-top: 5rem;
 	}
 	.messagePageCover {
 		width: 100vw;
@@ -34,11 +39,6 @@
 	.contactFormContainer {
 		flex: 1;
 		padding-right: 1rem;
-		h1 {
-			font-size: 2rem;
-			color: $componentName;
-			margin-bottom: 4rem;
-		}
 	}
 	.inputGroup {
 		margin-bottom: 3rem;

@@ -2,11 +2,13 @@
 
 .about {
 	// min-height: 98vh;
+	margin-bottom: 20rem;
+	padding-top: 5rem;
 
 	h1 {
 		color: white;
 		font-size: clamp(1.5rem, 5vw, 4rem);
-		margin-top: 5vw;
+
 		margin-bottom: clamp(2rem, 5vw, 4rem);
 	}
 	.container {

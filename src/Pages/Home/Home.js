@@ -1,5 +1,5 @@
 // react
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 // images
@@ -9,9 +9,28 @@ import expressIcon from '../../images/expressIcon.png';
 import nodeIcon from '../../images/node.png';
 import reduxIcon from '../../images/redux.png';
 
-const Home = () => {
+const Home = ({ setCurrentPage }) => {
+	const homeRef = useRef();
+
+	const homeObserverOptions = {
+		rootMargin: '0px 0px 50px 0px',
+		threshold: 0.9,
+	};
+
+	const homeObserver = new IntersectionObserver((entries, observer) => {
+		entries.forEach(({ isIntersecting, target }) => {
+			if (isIntersecting) {
+				setCurrentPage('home');
+			}
+		});
+	}, homeObserverOptions);
+
+	useEffect(() => {
+		homeObserver.observe(homeRef.current);
+	}, []);
+
 	return (
-		<div className="home">
+		<div id="home" className="home" ref={homeRef}>
 			<div className="container">
 				<p className="tag-fragment">{'<>'}</p>
 				<div className="tab">

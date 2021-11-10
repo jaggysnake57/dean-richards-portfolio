@@ -9,7 +9,7 @@ import { auth } from '../../firebase';
 //icons
 import { AiOutlineClose } from 'react-icons/ai';
 
-const Navbar = ({ currentPage }) => {
+const Navbar = ({ currentPage, setCurrentPage }) => {
 	//context
 	const [{ userId }, dispatch] = useStateValue();
 
@@ -21,50 +21,54 @@ const Navbar = ({ currentPage }) => {
 	//functions
 	const handleLogOut = () => {
 		auth.signOut();
-		console.log('log out clicked');
 	};
 
 	return (
 		<div className="navbar">
 			<div className="container">
 				<div className="brand">
-					<Link
-						to="/"
+					<a
+						href="#home"
 						className={
 							currentPage === 'home' ? 'current' : 'undefined'
-						}>
+						}
+						onClick={() => setCurrentPage('home')}>
 						Dean Richards
-					</Link>
+					</a>
 				</div>
 				<nav className={navMenuOpen ? 'open' : null}>
-					<Link
-						to="/"
+					<a
+						href="#home"
 						className={
 							currentPage === 'home' ? 'current' : 'undefined'
-						}>
+						}
+						onClick={() => setCurrentPage('home')}>
 						Home
-					</Link>
-					<Link
-						to="/about"
+					</a>
+					<a
+						href="#about"
 						className={
 							currentPage === 'about' ? 'current' : 'undefined'
-						}>
+						}
+						onClick={() => setCurrentPage('about')}>
 						About
-					</Link>
-					<Link
-						to="/projects"
+					</a>
+					<a
+						href="#projects"
 						className={
 							currentPage === 'projects' ? 'current' : 'undefined'
-						}>
+						}
+						onClick={() => setCurrentPage('projects')}>
 						Projects
-					</Link>
-					<Link
-						to="/contact"
+					</a>
+					<a
+						href="#contact"
 						className={
 							currentPage === 'contact' ? 'current' : 'undefined'
-						}>
+						}
+						onClick={() => setCurrentPage('contact')}>
 						Contact
-					</Link>
+					</a>
 					{userId && <p onClick={() => handleLogOut()}>Sign out</p>}
 				</nav>
 				<div

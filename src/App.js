@@ -20,9 +20,11 @@ import NotFound from './Pages/NotFound/NotFound';
 import Signin from './Pages/SignIn/Signin';
 
 function App() {
-	const [currentPage, setCurrentPage] = useState('home');
-
+	// context
 	const [{ userId }, dispatch] = useStateValue();
+
+	//state
+	const [currentPage, setCurrentPage] = useState('home');
 
 	useEffect(() => {
 		const isAdmin = async (uid) => {
@@ -67,7 +69,7 @@ function App() {
 
 	return (
 		<Router>
-			<Navbar currentPage={currentPage} />
+			<Navbar currentPage={currentPage} setCurrentPage={setCurrentPage} />
 			<div className="siteBackground">
 				<p>Dean Richards</p>
 			</div>
@@ -77,10 +79,10 @@ function App() {
 					{currentPage.charAt(0).toUpperCase() + currentPage.slice(1)}
 				</title>
 			</Helmet>
-			<Home />
-			<About />
-			<Projects />
-			<Contact />
+			<Home setCurrentPage={setCurrentPage} />
+			<About setCurrentPage={setCurrentPage} />
+			<Projects setCurrentPage={setCurrentPage} />
+			<Contact setCurrentPage={setCurrentPage} />
 		</Router>
 	);
 }
