@@ -30,36 +30,46 @@ const About = ({ setCurrentPage, currentPage }) => {
 			<div className="container">
 				<h1>About</h1>
 				<p>
-					HI. My name is Dean, and I am a full stack developer, mainly
-					in MERN and React, but I continue to grow my language and
-					skills daily. I have spent the last 10 years raising my two
-					daughters and coding when I can, (with two active young
-					girls that is not all that often!). 2020 was the year for me
-					to get back into work, oh boy did I pick a year! So instead
-					of working I spent 2020 with my family and coding when I
-					could, picking up more skills along the way.
+					HI. My name is Dean Richards, and I am a frontend developer.
+					My core strengths are in HTML, CSS JavaScript and React and
+					I have experience with node.js, express, firebase, PHP and
+					git.
 				</p>
 
 				<p>
-					Before becoming a developer, I worked in the hospitality
-					sector for just under 10 years mainly front facing, dealing
-					with customers daily. I am extremely comfortable dealing
-					with people, both client and team alike. After having my
-					first child I stayed at home raising her and started a HNC
-					computing course, this is where I discovered website
-					development. After finishing the course, I started to learn
-					web site development focusing on PHP. Suring this time I
-					launched several sites that have since stopped operating.
-					With the birth of my second child my attention was pulled
-					away from development until the end of 2019, when I found
-					more time to develop. I found myself needing to learn
-					JavaScript and the node, express environment. I used sites
-					like LinkedIn learning and Udemy to learn.
+					I have spent the last 10 years raising my two daughters and
+					coding when I can, (with two active young girls that is not
+					all that often!). 2020 was the year for me to get back into
+					work, oh boy did I pick a year! So instead of working I
+					spent 2020 with my family and coding when I could, picking
+					up more skills along the way.
 				</p>
 				<p>
-					I am currently freelance, but I am looking for a more stable
-					income stream. If you have a project or are looking for an
-					employee, get in touch <Link to="/contact">here</Link>
+					After having my first child I stayed at home raising her and
+					started a HNC computing course, this is where I discovered
+					website development. After finishing the course, I started
+					to learn web site development focusing on PHP. During this
+					time, I worked on a website for a local start-up.
+					Unfortunately, this site was never launched (they went with
+					another developer), that took a toll on my confidence and
+					with the birth of my second child my attention was pulled
+					away from development until the end of 2019.
+				</p>
+
+				<p>
+					I moved away from PHP and focused JavaScript and the node,
+					express environment. I used sites like LinkedIn learning and
+					Udemy to learn the basics and moved onto React after some
+					more research into the current market. I have completed
+					several projects, some of which are below in the{' '}
+					<a href="#projects">projects</a> section.
+				</p>
+
+				<p>
+					After more than 10 years out of work and recently turning
+					40, I am keen to start a new journey and I want to catch up
+					on time missed. My goal is to achieve a senior role as soon
+					as I can, and I am willing to put the work in to do so.
 				</p>
 			</div>
 			{/* <Carousel currentPage={currentPage} /> */}

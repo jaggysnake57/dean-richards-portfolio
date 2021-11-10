@@ -71,10 +71,10 @@ const Home = ({ setCurrentPage }) => {
 							<span className="bool">{' => '}</span>
 							<span>
 								{' '}
-								<Link to="/about" className="function">
+								<a href="#about" className="function">
 									aboutMe
 									<span className="bracket-3">{'()'}</span>
-								</Link>
+								</a>
 							</span>
 							<span className="bracket-2">{'}'}</span>
 							<span className="tag-fragment">{' />'}</span>
