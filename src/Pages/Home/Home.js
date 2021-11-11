@@ -48,7 +48,7 @@ const Home = ({ setCurrentPage }) => {
 							tags=<span className="bracket-2">{'{'}</span>
 						</p>
 						<div className=" attribute tab object">
-							<p>HTML 5: </p>
+							<p>HTML5: </p>
 							<img src={HTMLIcon} alt="mongo icon"></img>
 							<p>Sass:</p>
 							<img src={sassIcon} alt="" />

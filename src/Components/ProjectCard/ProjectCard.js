@@ -53,7 +53,7 @@ const ProjectCard = ({
 		const finishPos = isLeft ? '-10%' : '10%';
 		if (imageLoaded) {
 			ScrollTrigger.matchMedia({
-				'(min-width: 40rem)': function () {
+				'(min-width: 40rem) and (max-width: 2399px)': function () {
 					gsap.fromTo(
 						projectCardRef.current,
 						{
@@ -83,10 +83,10 @@ const ProjectCard = ({
 							duration: 2,
 							scrollTrigger: {
 								trigger: projectCardRef.current,
-
 								scrub: 1,
+
 								start: '0px bottom',
-								end: '0px 55%',
+								end: '0px 20%',
 							},
 						}
 					);

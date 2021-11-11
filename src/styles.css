@@ -146,6 +146,11 @@ body {
   margin-bottom: 20rem;
   padding-top: 5rem;
 }
+@media (max-width: 63em) {
+  .about {
+    margin-bottom: 0rem;
+  }
+}
 .about h1 {
   color: white;
   font-size: clamp(1.5rem, 5vw, 4rem);
@@ -169,6 +174,7 @@ body {
 }
 
 .contact {
+  margin-bottom: 10rem;
   padding-top: 5rem;
 }
 .contact h1 {
@@ -402,6 +408,7 @@ body {
 }
 @media (max-width: 1024px) {
   .home {
+    height: auto;
     font-size: 2rem;
   }
   .home .tab {
@@ -611,11 +618,11 @@ body {
   transition: opacity 0.3s;
 }
 .navbar nav .current {
-  color: #858585;
+  color: #4ebc7c;
   cursor: default;
 }
 .navbar nav .current:hover {
-  color: #858585;
+  color: #4ebc7c;
 }
 .navbar nav .current:hover::after {
   opacity: 0;
@@ -698,7 +705,6 @@ body {
 }
 @media (min-width: 2400px) {
   .project {
-    right: 56.2%;
     width: 3000px;
   }
 }

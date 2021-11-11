@@ -1,5 +1,6 @@
 @use '../../sass/abstracts/' as *;
 .contact {
+	margin-bottom: 10rem;
 	h1 {
 		font-size: clamp(1.5rem, 5vw, 4rem);
 		color: white;

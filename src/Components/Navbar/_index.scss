@@ -54,10 +54,10 @@
 			}
 		}
 		.current {
-			color: $defaultIcon;
+			color: $componentName;
 			cursor: default;
 			&:hover {
-				color: $defaultIcon;
+				color: $componentName;
 				&::after {
 					opacity: 0;
 				}

@@ -4,6 +4,9 @@
 	// min-height: 98vh;
 	margin-bottom: 20rem;
 	padding-top: 5rem;
+	@include mq(medium) {
+		margin-bottom: 0rem;
+	}
 
 	h1 {
 		color: white;
