@@ -76,7 +76,10 @@ const Projects = ({ setCurrentPage, currentPage }) => {
 
 	return (
 		<div id="projects" className="projects" ref={projectsRef}>
-			<div className="pageBackground">
+			<div
+				className={`pageBackground ${
+					currentPage === 'projects' && 'pageBackground--active'
+				}`}>
 				<p>PROJECTS</p>
 			</div>
 			<div className="container">

@@ -32,12 +32,16 @@ body {
 }
 
 .pageBackground {
-	display: none;
 	position: fixed;
 	top: -10%;
 	right: 20%;
 	z-index: -10;
 	color: $defaultIcon;
+	opacity: 0;
+	transition: opacity 0.4s linear;
+	&--active {
+		opacity: 1;
+	}
 	p {
 		font-size: 40rem;
 		opacity: 0.08;

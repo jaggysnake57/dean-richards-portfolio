@@ -13,7 +13,7 @@ import {
 	RiTwitterLine,
 } from 'react-icons/ri';
 
-const Contact = ({ setCurrentPage, openTag, closeTag }) => {
+const Contact = ({ setCurrentPage, currentPage }) => {
 	//state
 	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
@@ -24,7 +24,7 @@ const Contact = ({ setCurrentPage, openTag, closeTag }) => {
 
 	const contactObserverOptions = {
 		rootMargin: '0px 0px 0px 0px',
-		threshold: 0.8,
+		threshold: 0.7,
 	};
 
 	const contactObserver = new IntersectionObserver((entries, observer) => {
@@ -87,7 +87,10 @@ const Contact = ({ setCurrentPage, openTag, closeTag }) => {
 					</div>
 				</div>
 			)}
-			<div className="pageBackground">
+			<div
+				className={`pageBackground ${
+					currentPage === 'contact' && 'pageBackground--active'
+				}`}>
 				<p>CONTACT</p>
 			</div>
 			<div className="container">

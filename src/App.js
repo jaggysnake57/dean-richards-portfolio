@@ -80,9 +80,15 @@ function App() {
 				</title>
 			</Helmet>
 			<Home setCurrentPage={setCurrentPage} />
-			<About setCurrentPage={setCurrentPage} />
-			<Projects setCurrentPage={setCurrentPage} />
-			<Contact setCurrentPage={setCurrentPage} />
+			<About setCurrentPage={setCurrentPage} currentPage={currentPage} />
+			<Projects
+				setCurrentPage={setCurrentPage}
+				currentPage={currentPage}
+			/>
+			<Contact
+				setCurrentPage={setCurrentPage}
+				currentPage={currentPage}
+			/>
 		</Router>
 	);
 }

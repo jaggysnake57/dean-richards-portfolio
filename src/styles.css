@@ -48,12 +48,16 @@ body {
 }
 
 .pageBackground {
-  display: none;
   position: fixed;
   top: -10%;
   right: 20%;
   z-index: -10;
   color: #858585;
+  opacity: 0;
+  transition: opacity 0.4s linear;
+}
+.pageBackground--active {
+  opacity: 1;
 }
 .pageBackground p {
   font-size: 40rem;
@@ -763,10 +767,10 @@ body {
   margin-top: 2rem;
 }
 .project__info h2 {
-  font-size: clamp(1.5rem, 5vw, 4rem);
+  font-size: clamp(1.5rem, 5vw, 3rem);
 }
 .project__info p {
-  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-size: clamp(1rem, 2vw, 1.2rem);
   line-height: 1.5em;
 }
 .project__image {
