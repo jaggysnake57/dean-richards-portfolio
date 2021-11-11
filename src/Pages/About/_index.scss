@@ -1,0 +1,33 @@
+@use '../../sass/abstracts/' as *;
+
+.about {
+	// min-height: 98vh;
+	margin-bottom: 20rem;
+	padding-top: 5rem;
+	@include mq(medium) {
+		margin-bottom: 0rem;
+	}
+
+	h1 {
+		color: white;
+		font-size: clamp(1.5rem, 5vw, 4rem);
+
+		margin-bottom: clamp(2rem, 5vw, 4rem);
+	}
+	.container {
+		p {
+			font-size: clamp(1rem, 2vw, 1.5rem);
+			color: white;
+			width: 100%;
+			max-width: 80rem;
+			line-height: 2rem;
+			margin-bottom: 2rem;
+			@media (max-width: 55rem) {
+				line-height: 1.6rem;
+			}
+			a {
+				color: $footer;
+			}
+		}
+	}
+}

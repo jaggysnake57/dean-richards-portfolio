@@ -9,42 +9,22 @@ import Helmet from 'react-helmet';
 import { auth, db } from './firebase';
 
 //components
-import Navbar from './Components/Navbar';
+import Navbar from './Components/Navbar/Navbar';
 
 //pages
-import Home from './Pages/Home';
-import About from './Pages/About';
-import Projects from './Pages/Projects';
-import Contact from './Pages/Contact';
-import NotFound from './Pages/NotFound';
-import Signin from './Pages/Signin';
-
-//css
-import './css/App.css';
+import Home from './Pages/Home/Home';
+import About from './Pages/About/About';
+import Projects from './Pages/Projects/Projects';
+import Contact from './Pages/Contact/Contact';
+import NotFound from './Pages/NotFound/NotFound';
+import Signin from './Pages/SignIn/Signin';
 
 function App() {
-	const [currentPage, setCurrentPage] = useState('home');
-
+	// context
 	const [{ userId }, dispatch] = useStateValue();
 
-	const openTag = (tagName) => {
-		return (
-			<>
-				<span className="tag-fragment">{'<'}</span>
-				<span className="bool">{tagName}</span>
-				<span className="tag-fragment">{'>'}</span>
-			</>
-		);
-	};
-	const closeTag = (tagName) => {
-		return (
-			<>
-				<span className="tag-fragment">{'<'}</span>
-				<span className="bool">{tagName}</span>
-				<span className="tag-fragment">{'/>'}</span>
-			</>
-		);
-	};
+	//state
+	const [currentPage, setCurrentPage] = useState('home');
 
 	useEffect(() => {
 		const isAdmin = async (uid) => {
@@ -67,7 +47,6 @@ function App() {
 				);
 			}
 		};
-
 		auth.onAuthStateChanged((authUser) => {
 			if (authUser) {
 				dispatch({
@@ -83,7 +62,6 @@ function App() {
 				dispatch({
 					type: 'LOG_USER_OUT',
 				});
-
 				console.log('user logged out');
 			}
 		});
@@ -91,75 +69,20 @@ function App() {
 
 	return (
 		<Router>
-			<div className="App">
-				<Navbar currentPage={currentPage} />
-
-				{/* navbar side */}
-
-				<div className="siteBackground">
-					<p>Dean Richards</p>
-				</div>
-				<Helmet>
-					<title>
-						Dean Richards |{' '}
-						{currentPage.charAt(0).toUpperCase() +
-							currentPage.slice(1)}
-					</title>
-				</Helmet>
-				<Switch>
-					{/* home */}
-					<Route
-						exact
-						path="/"
-						render={(props) => (
-							<Home {...props} setCurrentPage={setCurrentPage} />
-						)}
-					/>
-					{/* about */}
-					<Route
-						exact
-						path="/about"
-						render={(props) => (
-							<About
-								{...props}
-								setCurrentPage={setCurrentPage}
-								currentPage={currentPage}
-							/>
-						)}
-					/>
-					{/* projects */}
-					<Route
-						exact
-						path="/projects"
-						render={(props) => (
-							<Projects
-								{...props}
-								setCurrentPage={setCurrentPage}
-								currentPage={currentPage}
-							/>
-						)}
-					/>
-					{/* contact */}
-					<Route
-						exact
-						path="/contact"
-						render={(props) => (
-							<Contact
-								{...props}
-								setCurrentPage={setCurrentPage}
-								openTag={openTag}
-								closeTag={closeTag}
-							/>
-						)}
-					/>
-					<Route
-						exact
-						path="/signin"
-						render={(props) => <Signin {...props} />}
-					/>
-					<Route component={NotFound} />
-				</Switch>
+			<Navbar currentPage={currentPage} setCurrentPage={setCurrentPage} />
+			<div className="siteBackground">
+				<p>Dean Richards</p>
 			</div>
+			<Helmet>
+				<title>
+					Dean Richards |{' '}
+					{currentPage.charAt(0).toUpperCase() + currentPage.slice(1)}
+				</title>
+			</Helmet>
+			<Home setCurrentPage={setCurrentPage} />
+			<About setCurrentPage={setCurrentPage} />
+			<Projects setCurrentPage={setCurrentPage} />
+			<Contact setCurrentPage={setCurrentPage} />
 		</Router>
 	);
 }

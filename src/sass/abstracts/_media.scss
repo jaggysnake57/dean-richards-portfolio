@@ -1,0 +1,12 @@
+$breakpoints: (
+	small: 40em,
+	medium: 64em,
+	custom: 2400px,
+);
+
+@mixin mq($key) {
+	$size: map-get($breakpoints, $key);
+	@media (max-width: $size,) {
+		@content;
+	}
+}

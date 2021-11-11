@@ -1,0 +1,143 @@
+@use '../../sass/abstracts/' as *;
+
+.navbar {
+	background-color: $tabBar;
+	padding: 5px 0;
+	position: fixed;
+	width: 100%;
+	z-index: 10;
+
+	.container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.brand {
+		a {
+			color: $componentName;
+			text-decoration: none;
+			font-size: 2rem;
+		}
+	}
+	nav {
+		width: 60%;
+		max-width: 600px;
+		display: flex;
+		justify-content: space-between;
+		z-index: 100;
+		a,
+		p {
+			color: white;
+			font-size: 1.5rem;
+			text-decoration: none;
+			position: relative;
+			cursor: pointer;
+			&::after {
+				content: '';
+				display: block;
+				width: 50px;
+				height: 5px;
+				background-color: $componentName;
+				position: absolute;
+				bottom: -10px;
+				left: 50%;
+				margin-left: -25px;
+				opacity: 0;
+			}
+			&:hover {
+				color: $componentName;
+				transition: all 0.3s;
+				&::after {
+					opacity: 1;
+					transition: opacity 0.3s;
+				}
+			}
+		}
+		.current {
+			color: $componentName;
+			cursor: default;
+			&:hover {
+				color: $componentName;
+				&::after {
+					opacity: 0;
+				}
+			}
+		}
+	}
+}
+.burger {
+	display: none;
+	// display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 3px 0;
+	height: 35px;
+	div {
+		width: 40px;
+		height: 3px;
+		background-color: white;
+	}
+}
+
+@media (max-width: 900px) {
+	.burger {
+		display: flex;
+		position: relative;
+		div {
+			visibility: visible;
+			transition: visibility;
+			transition-delay: 0.3s;
+		}
+		svg {
+			visibility: hidden;
+			position: absolute;
+			transition: visibility;
+			transition-delay: 0.1s;
+			left: 10%;
+			font-size: 2rem;
+			color: white;
+		}
+	}
+	.navbar {
+		nav {
+			position: absolute;
+			width: 100%;
+			max-width: 2000px;
+			top: -820%;
+			left: 0;
+			flex-direction: column;
+			align-items: center;
+			padding: 1rem 0;
+			background-color: $topBar;
+			transition: top 0.5s;
+			a {
+				margin-bottom: 1.5rem;
+			}
+		}
+		nav.open {
+			top: 110%;
+			transition: top 0.5s;
+		}
+		nav.open + .burger {
+			div {
+				visibility: hidden;
+				transition: visibility;
+				transition-delay: 0.1s;
+			}
+			svg {
+				visibility: visible;
+				transition: visibility;
+				transition-delay: 0.32s;
+			}
+		}
+	}
+}
+@media (max-width: 550px) {
+	.navbar {
+		.brand {
+			a {
+				font-size: 1.5rem;
+			}
+		}
+	}
+}
