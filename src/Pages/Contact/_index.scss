@@ -9,6 +9,9 @@
 	padding-top: 5rem;
 	&__flex-wrapper {
 		display: flex;
+		@include mq(medium) {
+			flex-direction: column;
+		}
 	}
 	.messagePageCover {
 		width: 100vw;

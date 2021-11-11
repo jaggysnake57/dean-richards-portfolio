@@ -16,8 +16,6 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
 	//state
 	const [navMenuOpen, setNavMenuOpen] = useState(false);
 
-	//hooks
-
 	//functions
 	const handleLogOut = () => {
 		auth.signOut();

@@ -103,7 +103,7 @@
 			position: absolute;
 			width: 100%;
 			max-width: 2000px;
-			top: -600%;
+			top: -820%;
 			left: 0;
 			flex-direction: column;
 			align-items: center;
@@ -115,7 +115,7 @@
 			}
 		}
 		nav.open {
-			top: 100%;
+			top: 110%;
 			transition: top 0.5s;
 		}
 		nav.open + .burger {

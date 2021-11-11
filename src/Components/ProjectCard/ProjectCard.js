@@ -51,9 +51,31 @@ const ProjectCard = ({
 	useEffect(() => {
 		const startPos = isLeft ? '-100%' : '100%';
 		const finishPos = isLeft ? '-10%' : '10%';
+		const scrollTriggerOptions = {
+			trigger: projectCardRef.current,
+			scrub: 1,
+			start: '0px bottom',
+		};
+
 		if (imageLoaded) {
 			ScrollTrigger.matchMedia({
-				'(min-width: 40rem) and (max-width: 2399px)': function () {
+				'(max-width: 40rem)': function () {
+					gsap.fromTo(
+						projectCardRef.current,
+						{
+							x: '0px',
+						},
+						{
+							x: '0px',
+							duration: 2,
+							scrollTrigger: {
+								...scrollTriggerOptions,
+								end: '0px 20%',
+							},
+						}
+					);
+				},
+				'(min-width: 40rem) and (max-width: 64rem)': function () {
 					gsap.fromTo(
 						projectCardRef.current,
 						{
@@ -63,10 +85,23 @@ const ProjectCard = ({
 							x: finishPos,
 							duration: 2,
 							scrollTrigger: {
-								trigger: projectCardRef.current,
-
-								scrub: 1,
-								start: '0px bottom',
+								...scrollTriggerOptions,
+								end: '0px 20%',
+							},
+						}
+					);
+				},
+				'(min-width: 64rem) and (max-width: 2399px)': function () {
+					gsap.fromTo(
+						projectCardRef.current,
+						{
+							x: startPos,
+						},
+						{
+							x: finishPos,
+							duration: 2,
+							scrollTrigger: {
+								...scrollTriggerOptions,
 								end: '0px 55%',
 							},
 						}
@@ -82,10 +117,7 @@ const ProjectCard = ({
 							x: '0px',
 							duration: 2,
 							scrollTrigger: {
-								trigger: projectCardRef.current,
-								scrub: 1,
-
-								start: '0px bottom',
+								...scrollTriggerOptions,
 								end: '0px 20%',
 							},
 						}

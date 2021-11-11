@@ -48,10 +48,10 @@
 		}
 		color: white;
 		h2 {
-			font-size: 3em;
+			font-size: clamp(1.5rem, 5vw, 4rem);
 		}
 		p {
-			font-size: 1.1em;
+			font-size: clamp(1rem, 2vw, 1.5rem);
 			line-height: 1.5em;
 		}
 	}
@@ -61,6 +61,7 @@
 		margin: 0 2rem;
 		@include mq(medium) {
 			margin: 0;
+			margin-bottom: 2rem;
 		}
 		img {
 			max-width: 100%;
@@ -71,6 +72,15 @@
 	&__buttons-wrapper {
 		display: flex;
 		justify-content: flex-end;
+		@include mq(small) {
+			flex-direction: column;
+
+			.btn {
+				width: 100%;
+				margin: 0;
+				margin-bottom: 1rem;
+			}
+		}
 		& > * + * {
 			margin-left: 1rem;
 		}

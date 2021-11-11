@@ -3,6 +3,9 @@
 .projects {
 	margin-bottom: 20rem;
 	padding-top: 5rem;
+	@include mq(medium) {
+		margin-bottom: 0;
+	}
 	h1 {
 		font-size: clamp(1.5rem, 5vw, 4rem);
 		color: white;

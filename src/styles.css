@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
@@ -146,7 +150,7 @@ body {
   margin-bottom: 20rem;
   padding-top: 5rem;
 }
-@media (max-width: 63em) {
+@media (max-width: 64em) {
   .about {
     margin-bottom: 0rem;
   }
@@ -184,6 +188,11 @@ body {
 }
 .contact__flex-wrapper {
   display: flex;
+}
+@media (max-width: 64em) {
+  .contact__flex-wrapper {
+    flex-direction: column;
+  }
 }
 .contact .messagePageCover {
   width: 100vw;
@@ -462,6 +471,11 @@ body {
   margin-bottom: 20rem;
   padding-top: 5rem;
 }
+@media (max-width: 64em) {
+  .projects {
+    margin-bottom: 0;
+  }
+}
 .projects h1 {
   font-size: clamp(1.5rem, 5vw, 4rem);
   color: white;
@@ -665,7 +679,7 @@ body {
     position: absolute;
     width: 100%;
     max-width: 2000px;
-    top: -600%;
+    top: -820%;
     left: 0;
     flex-direction: column;
     align-items: center;
@@ -677,7 +691,7 @@ body {
     margin-bottom: 1.5rem;
   }
   .navbar nav.open {
-    top: 100%;
+    top: 110%;
     transition: top 0.5s;
   }
   .navbar nav.open + .burger div {
@@ -708,7 +722,7 @@ body {
     width: 3000px;
   }
 }
-@media (max-width: 63em) {
+@media (max-width: 64em) {
   .project {
     padding: 2rem;
   }
@@ -743,19 +757,20 @@ body {
   margin-top: 2rem;
 }
 .project__info h2 {
-  font-size: 3em;
+  font-size: clamp(1.5rem, 5vw, 4rem);
 }
 .project__info p {
-  font-size: 1.1em;
+  font-size: clamp(1rem, 2vw, 1.5rem);
   line-height: 1.5em;
 }
 .project__image {
   flex: 4 1;
   margin: 0 2rem;
 }
-@media (max-width: 63em) {
+@media (max-width: 64em) {
   .project__image {
     margin: 0;
+    margin-bottom: 2rem;
   }
 }
 .project__image img {
@@ -766,6 +781,16 @@ body {
   display: flex;
   justify-content: flex-end;
 }
+@media (max-width: 40em) {
+  .project__buttons-wrapper {
+    flex-direction: column;
+  }
+  .project__buttons-wrapper .btn {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+}
 .project__buttons-wrapper > * + * {
   margin-left: 1rem;
 }
@@ -775,7 +800,7 @@ body {
 .project--pull-left .project__content {
   margin-left: auto;
 }
-@media (max-width: 63em) {
+@media (max-width: 64em) {
   .project--pull-left .project__content {
     flex-direction: column-reverse;
   }
@@ -797,7 +822,7 @@ body {
   margin-right: auto;
   flex-direction: row-reverse;
 }
-@media (max-width: 63em) {
+@media (max-width: 64em) {
   .project--pull-right .project__content {
     flex-direction: column-reverse;
   }
