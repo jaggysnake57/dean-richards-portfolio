@@ -23,7 +23,7 @@ const Projects = ({ setCurrentPage, currentPage }) => {
 
 	const getProjects = async () => {
 		try {
-			const data = await db.collection('projects').get();
+			const data = await db.collection('projects').orderBy('order').get();
 			let projects = [];
 			data.docs.map((project) => {
 				if (!project.data().featured) {
