@@ -30,7 +30,10 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
 						className={
 							currentPage === 'home' ? 'current' : 'undefined'
 						}
-						onClick={() => setCurrentPage('home')}>
+						onClick={() => {
+							setCurrentPage('home');
+							setNavMenuOpen(false);
+						}}>
 						Dean Richards
 					</a>
 				</div>
@@ -40,7 +43,10 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
 						className={
 							currentPage === 'home' ? 'current' : 'undefined'
 						}
-						onClick={() => setCurrentPage('home')}>
+						onClick={() => {
+							setCurrentPage('home');
+							setNavMenuOpen(false);
+						}}>
 						Home
 					</a>
 					<a
@@ -48,7 +54,10 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
 						className={
 							currentPage === 'about' ? 'current' : 'undefined'
 						}
-						onClick={() => setCurrentPage('about')}>
+						onClick={() => {
+							setCurrentPage('about');
+							setNavMenuOpen(false);
+						}}>
 						About
 					</a>
 					<a
@@ -56,7 +65,10 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
 						className={
 							currentPage === 'projects' ? 'current' : 'undefined'
 						}
-						onClick={() => setCurrentPage('projects')}>
+						onClick={() => {
+							setCurrentPage('projects');
+							setNavMenuOpen(false);
+						}}>
 						Projects
 					</a>
 					<a
@@ -64,7 +76,10 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
 						className={
 							currentPage === 'contact' ? 'current' : 'undefined'
 						}
-						onClick={() => setCurrentPage('contact')}>
+						onClick={() => {
+							setCurrentPage('contact');
+							setNavMenuOpen(false);
+						}}>
 						Contact
 					</a>
 					{userId && <p onClick={() => handleLogOut()}>Sign out</p>}

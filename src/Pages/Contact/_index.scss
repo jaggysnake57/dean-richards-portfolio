@@ -43,6 +43,9 @@
 	.contactFormContainer {
 		flex: 1;
 		padding-right: 1rem;
+		@include mq(medium) {
+			padding-right: 0;
+		}
 	}
 	.inputGroup {
 		margin-bottom: 3rem;

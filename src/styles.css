@@ -8,6 +8,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -224,6 +225,11 @@ body {
 .contact .contactFormContainer {
   flex: 1;
   padding-right: 1rem;
+}
+@media (max-width: 64em) {
+  .contact .contactFormContainer {
+    padding-right: 0;
+  }
 }
 .contact .inputGroup {
   margin-bottom: 3rem;
